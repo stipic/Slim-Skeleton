@@ -66,18 +66,18 @@ class HomeController extends Controller
 
 	public function fix_menu_array_keys($array) 
 	{
-	    $numberCheck = false;
-	    foreach($array as $key => $val) 
-	    {
-	        if(is_array($val)) $array[$key] = $this->fix_menu_array_keys($val); 
-	        if(is_numeric($key)) $numberCheck = true;
-	    }
+		$numberCheck = false;
+		foreach($array as $key => $val) 
+		{
+			if(is_array($val)) $array[$key] = $this->fix_menu_array_keys($val); 
+			if(is_numeric($key)) $numberCheck = true;
+		}
 
-	    if($numberCheck === true) {
-	        return array_values($array);
-	    } 
-	    else {
-	        return $array;
-	    }
+		if($numberCheck === true) {
+			return array_values($array);
+		} 
+		else {
+	    	return $array;
+		}
 	}
 }

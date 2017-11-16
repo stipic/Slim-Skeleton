@@ -23,6 +23,8 @@ class AuthController
 		$methods = $route->getMethods();
 		$arguments = $route->getArguments();
 
+		print_r($args);
+		print '<br />================================ [ AUTH ]=========================';
 		print_r($this->_container['settings']);
 		print '================================ [ AUTH ]=========================';
 	}

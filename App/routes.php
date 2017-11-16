@@ -26,7 +26,7 @@ $single_routes = array(
 $grouped_routes = array(
 	
 	'/api' => array(
-		'/auth' => array(
+		'/auth/{name}' => array(
 			'methods' => array(
 				'POST', 
 				'GET'
