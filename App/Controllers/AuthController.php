@@ -24,9 +24,6 @@ class AuthController
 		$arguments = $route->getArguments();
 
 		print_r($this->_container['settings']);
-
-		$users = $this->_db->get('onlinefilmovi_users');
-		var_dump($users);
 		print '================================ [ AUTH ]=========================';
 	}
 }

@@ -37,40 +37,9 @@ class HomeController extends Controller
 
 	public function return_menu_array() 
 	{
-		$menus = $this->_db->get('menus');
-		foreach($menus as $menu)
-		{
-			$menu_id = $menu['id'];
-			$name = $menu['name'];
-			$desc = $menu['description'];
-			$created = $menu['created'];
-
-			$this->menu_array['id'] = $menu_id;
-			$this->menu_array['name'] = $name;
-			$this->menu_array['desc'] = $desc;
-			$this->menu_array['created'] = $created;
-
-			$this->_db->where('menu_id', $menu_id);
-			$this->_db->orderBy("'order'", "asc");
-			$columns = $this->_db->get('menu_sections');
-			$column_counter = 0;
-			foreach($columns as $column)
-			{
-				$column_id = $column['id'];
-
-				$this->_db->where('column_id', $column_id);
-				$this->_db->orderBy("id", "asc");
-				$items = $this->_db->get('menu_items');
-
-				$new = $this->build_menu_array($items);
-				$this->menu_array['items'][$column_counter] = $new;
-
-				++ $column_counter;
-			}
-		}
-
-		$fixed_array = $this->fix_menu_array_keys($this->menu_array);
-		print_r($fixed_array);
+		$menus = $this->_db->get('menu');
+		
+		print_r($menus);
 	}
 
 	public function build_menu_array($items, $parent_id = null) 
