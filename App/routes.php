@@ -1,4 +1,5 @@
 <?php
+defined('APP') OR exit('No direct script access allowed');
 /*
 	HTTP METHODS LIST
 	-----------------

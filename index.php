@@ -1,4 +1,5 @@
 <?php
+define('APP', true);
 define('PRODUCTION_ENV', 'production');
 define('STAGING_ENV', 'staging');
 define('DEVELOPMENT_ENV', 'dev');
@@ -25,6 +26,7 @@ foreach($config['env_hostnames'] as $env => $computers) {
 
 if(!isset($config['env'])) {
 	// Nema podešeni environment, baci na maintance page
+	die('Nema podešeni environment, baci na maintance page');
 	exit;
 }
 

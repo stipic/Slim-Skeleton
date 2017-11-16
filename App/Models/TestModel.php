@@ -1,5 +1,7 @@
 <?php
 namespace App\Models;
+defined('APP') OR exit('No direct script access allowed');
+
 use Respect\Validation\Validator as Validator;
 
 class TestModel

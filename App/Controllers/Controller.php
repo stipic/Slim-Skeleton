@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+defined('APP') OR exit('No direct script access allowed');
 
 use Slim\Container;
 

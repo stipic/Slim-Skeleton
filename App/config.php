@@ -1,4 +1,6 @@
 <?php
+defined('APP') OR exit('No direct script access allowed');
+
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 $config['determineRouteBeforeAppMiddleware'] = true;

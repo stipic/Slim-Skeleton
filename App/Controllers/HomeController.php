@@ -1,5 +1,7 @@
 <?php
 namespace App\Controllers;
+defined('APP') OR exit('No direct script access allowed');
+
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
