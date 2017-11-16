@@ -4,9 +4,7 @@ defined('APP') OR exit('No direct script access allowed');
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-
 use App\Models\TestModel;
-use Respect\Validation\Validator as Validator;
 
 class HomeController extends Controller
 {
@@ -24,16 +22,6 @@ class HomeController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
-		/*new TestModel();
-
-		$var = 'test';
-		if(Validator::when( Validator::stringType(), Validator::length(5, 5) )->validate($var)) {
-			echo 'True';
-		}
-		else {
-			echo 'False';
-		}*/
-
 		$this->return_menu_array();
 	}
 
