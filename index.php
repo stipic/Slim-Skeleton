@@ -24,8 +24,8 @@ foreach($config['env_hostnames'] as $env => $computers) {
 }
 
 if(!isset($config['env'])) {
-	// maintance...
-	die('E jbg!');
+	// Nema podešeni environment, baci na maintance page
+	exit;
 }
 
 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
@@ -47,7 +47,13 @@ require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'routes.ph
 $controllers = array();
 if(!empty($single_routes)) {
 	foreach($single_routes as $route => $param) {
-		$app->map($param['methods'], $route, $param['controller'].':'.DEFAULT_CONTROLLER_METHOD);
+
+		$c_and_method = explode(':', $param['controller']);
+		$controller = $c_and_method[0];
+		$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
+		$full_controller = $controller . ':' . $method;
+		
+		$app->map($param['methods'], $route, $full_controller);
 		if(!in_array($param['controller'], $controllers)) {
 			$controllers[] = $param['controller'];
 		}
@@ -59,7 +65,12 @@ if(!empty($grouped_routes)) {
 		$app->group($group, function() use($routes, $app, &$controllers) {
 			foreach($routes as $route => $param) {
 
-				$app->map($param['methods'], $route, $param['controller'].':'.DEFAULT_CONTROLLER_METHOD)->setName($param['route_name']);
+				$c_and_method = explode(':', $param['controller']);
+				$controller = $c_and_method[0];
+				$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
+				$full_controller = $controller . ':' . $method;
+
+				$app->map($param['methods'], $route, $full_controller)->setName($param['route_name']);
 
 				if(!in_array($param['controller'], $controllers)) {
 					$controllers[] = $param['controller'];
