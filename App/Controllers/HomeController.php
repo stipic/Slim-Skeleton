@@ -27,7 +27,7 @@ class HomeController extends Controller
 
 	public function return_menu_array() 
 	{
-		$menus = $this->_db->get('menu');
+		$menus = /*$this->_db->get('menu')*/ array();
 		
 		print_r($menus);
 	}

@@ -5,6 +5,7 @@ $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 $config['determineRouteBeforeAppMiddleware'] = true;
 $config['base_url'] = 'https://safe-drive.org';
+$config['acp_path'] = 'ACP';
 
 $config['env_hostnames'] = array(
 	DEVELOPMENT_ENV => array(

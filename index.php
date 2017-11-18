@@ -9,6 +9,7 @@ define('APP_DIRECTORY', 'App');
 define('CONTROLLERS_DIRECTORY', 'Controllers');
 define('PERSONAL_CONFIG_DIRECTORY', 'EnvConfig');
 define('DEFAULT_CONTROLLER_METHOD', 'index');
+define('ADMIN_DIRECTORY', 'Admin');
 
 require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
@@ -32,6 +33,7 @@ if(!isset($config['env'])) {
 
 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
 $base_url = $_SERVER['SERVER_NAME'];
+$uri = $_SERVER['REQUEST_URI'];
 $server_url = $protocol.$base_url;
 if($server_url !== $config['base_url']) {
 	header('Location: '.$config['base_url']);
@@ -44,51 +46,87 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'dependencies.php';
-require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'routes.php';
+
+$read_mode = 0; // 0 = App Dir! 1 = Admin Dir!
+$dynamic_namespace = NULL;
+$segments = explode('/', $uri);
+if(isset($segments[1]) && $segments[1] == $config['acp_path']) {
+	$read_mode = 1;
+}
 
 $controllers = array();
-if(!empty($single_routes)) {
-	foreach($single_routes as $route => $param) {
+if($read_mode == 0)
+{
+	require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'routes.php';
+	$dynamic_namespace = APP_DIRECTORY;
 
-		$c_and_method = explode(':', $param['controller']);
-		$controller = $c_and_method[0];
-		$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
-		$full_controller = $controller . ':' . $method;
-		
-		$app->map($param['methods'], $route, $full_controller);
-		if(!in_array($param['controller'], $controllers)) {
-			$controllers[] = $param['controller'];
+	if(!empty($single_routes)) {
+		foreach($single_routes as $route => $param) {
+
+			$c_and_method = explode(':', $param['controller']);
+			$controller = $c_and_method[0];
+			$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
+			$full_controller = $controller . ':' . $method;
+			
+			$app->map($param['methods'], $route, $full_controller);
+			if(!in_array($param['controller'], $controllers)) {
+				$controllers[] = $param['controller'];
+			}
 		}
 	}
-}
 
-if(!empty($grouped_routes)) {
-	foreach($grouped_routes as $group => $routes) {
-		$app->group($group, function() use($routes, $app, &$controllers) {
-			foreach($routes as $route => $param) {
+	if(!empty($grouped_routes)) {
+		foreach($grouped_routes as $group => $routes) {
+			$app->group($group, function() use($routes, $app, &$controllers) {
+				foreach($routes as $route => $param) {
 
-				$c_and_method = explode(':', $param['controller']);
-				$controller = $c_and_method[0];
-				$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
-				$full_controller = $controller . ':' . $method;
+					$c_and_method = explode(':', $param['controller']);
+					$controller = $c_and_method[0];
+					$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
+					$full_controller = $controller . ':' . $method;
 
-				$app->map($param['methods'], $route, $full_controller)->setName($param['route_name']);
+					$app->map($param['methods'], $route, $full_controller)->setName($param['route_name']);
 
-				if(!in_array($param['controller'], $controllers)) {
-					$controllers[] = $param['controller'];
+					if(!in_array($param['controller'], $controllers)) {
+						$controllers[] = $param['controller'];
+					}
 				}
-			}
-		});
+			});
+		}
 	}
-}
 
-$container[App\Controllers\Controller::class] = function($container) {
-	return new App\Controllers\Controller($container);
-};
+	$container[App\Controllers\Controller::class] = function($container) {
+		return new App\Controllers\Controller($container);
+	};
+}
+else
+{
+	require __DIR__.DIRECTORY_SEPARATOR.ADMIN_DIRECTORY.DIRECTORY_SEPARATOR.'routes.php';
+	$dynamic_namespace = ADMIN_DIRECTORY;
+
+	if(!empty($routes)) {
+		foreach($routes as $route => $param) {
+
+			$c_and_method = explode(':', $param['controller']);
+			$controller = $c_and_method[0];
+			$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
+			$full_controller = $controller . ':' . $method;
+			
+			$app->map($param['methods'], '/' . $config['acp_path'] . $route, $full_controller);
+			if(!in_array($param['controller'], $controllers)) {
+				$controllers[] = $param['controller'];
+			}
+		}
+	}
+
+	$container[Admin\Controllers\Controller::class] = function($container) {
+		return new Admin\Controllers\Controller($container);
+	};
+}
 
 foreach($controllers as $controller) {
-	$container[$controller] = function($container) use($controller) {
-		$dynamic_controller = '\\'.APP_DIRECTORY.'\\'.CONTROLLERS_DIRECTORY.'\\'.$controller;
+	$container[$controller] = function($container) use($controller, $dynamic_namespace) {
+		$dynamic_controller = '\\'.$dynamic_namespace.'\\'.CONTROLLERS_DIRECTORY.'\\'.$controller;
 		return new $dynamic_controller($container);
 	};
 }
