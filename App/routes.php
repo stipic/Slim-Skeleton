@@ -20,8 +20,7 @@ $single_routes = array(
 			'GET'
 		),
 		'controller' => 'HomeController'
-	),
-	
+	)
 );
 
 $grouped_routes = array(

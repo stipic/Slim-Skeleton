@@ -7,14 +7,34 @@ $routes = array(
 			'POST', 
 			'GET'
 		),
-		'controller' => 'DashboardController'
+		'controller' => 'DashboardController',
+		'module' => 'dashboard'
 	),
 
-	'/users' => array(
+	'/articles' => array(
 		'methods' => array(
 			'POST', 
 			'GET'
 		),
-		'controller' => 'DashboardController:users'
-	)
+		'controller' => 'ArticleController',
+		'module' => 'articles'
+	),
+
+	'/sections' => array(
+		'methods' => array(
+			'POST', 
+			'GET'
+		),
+		'controller' => 'SectionController',
+		'module' => 'sections'
+	),
+
+	'/menus' => array(
+		'methods' => array(
+			'POST', 
+			'GET'
+		),
+		'controller' => 'MenuController',
+		'module' => 'menus'
+	),
 );

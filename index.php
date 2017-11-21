@@ -122,6 +122,19 @@ else
 	$container[Admin\Controllers\Controller::class] = function($container) {
 		return new Admin\Controllers\Controller($container);
 	};
+
+	$app->add(function(Request $request, Response $response, $next) use($app) {
+
+		$container = $app->getContainer();
+		$auth = $container->get('Auth');
+
+		//$auth->login('kiki.stipic@gmail.com', '123321kiki123321');
+		if(!$auth->isLoggedIn()) {
+			die('E! Jbg nisi ulogiran...');
+		}
+
+		return $next($request, $response);
+	});
 }
 
 foreach($controllers as $controller) {

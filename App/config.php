@@ -4,6 +4,7 @@ defined('APP') OR exit('No direct script access allowed');
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 $config['determineRouteBeforeAppMiddleware'] = true;
+$config['project_name'] = 'WebCore';
 $config['base_url'] = 'https://safe-drive.org';
 $config['acp_path'] = 'ACP';
 

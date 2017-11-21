@@ -21,6 +21,7 @@ class DashboardController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
+		var_dump($_GET);
 		die('Yo');
 	}
 

@@ -8,7 +8,8 @@
     "require": {
         "slim/slim": "^3.0",
         "joshcam/mysqli-database-class": "dev-master",
-		"dyorg/slim-token-authentication": "^0.3.3"
+		"dyorg/slim-token-authentication": "^0.3.3",
+		"delight-im/auth": "^7.2"
     },
     "config": {
         "vendor-dir": "Plugins"
