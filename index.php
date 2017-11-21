@@ -1,5 +1,5 @@
 <?php
-define('APP', true);
+define('APP', __DIR__);
 define('PRODUCTION_ENV', 'production');
 define('STAGING_ENV', 'staging');
 define('DEVELOPMENT_ENV', 'dev');
@@ -10,6 +10,10 @@ define('CONTROLLERS_DIRECTORY', 'Controllers');
 define('PERSONAL_CONFIG_DIRECTORY', 'EnvConfig');
 define('DEFAULT_CONTROLLER_METHOD', 'index');
 define('ADMIN_DIRECTORY', 'Admin');
+define('APP_VIEW_DIRECTORY', 'Views');
+define('ADMIN_VIEW_DIRECTORY', 'Views');
+define('APP_VIEW_CACHE_DIRECTORY', 'Cache');
+define('ADMIN_VIEW_CACHE_DIRECTORY', 'Cache');
 
 require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
@@ -40,6 +44,13 @@ if($server_url !== $config['base_url']) {
 	exit; die();
 }
 
+$read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
+$dynamic_namespace = NULL;
+$segments = explode('/', $uri);
+if(isset($segments[1]) && $segments[1] == $config['acp_path']) {
+	$read_mode = ADMIN_DIRECTORY;
+}
+
 $app = new \Slim\App(["settings" => $config]);
 
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -47,15 +58,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'dependencies.php';
 
-$read_mode = 0; // 0 = App Dir! 1 = Admin Dir!
-$dynamic_namespace = NULL;
-$segments = explode('/', $uri);
-if(isset($segments[1]) && $segments[1] == $config['acp_path']) {
-	$read_mode = 1;
-}
-
 $controllers = array();
-if($read_mode == 0)
+if($read_mode == APP_DIRECTORY)
 {
 	require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'routes.php';
 	$dynamic_namespace = APP_DIRECTORY;

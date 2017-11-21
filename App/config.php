@@ -21,6 +21,23 @@ $config['env_hostnames'] = array(
 	)
 );
 
+$config['twig'] = array(
+	
+	ADMIN_DIRECTORY => array(
+		'templates' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_DIRECTORY,
+		'env' => array(
+			'cache' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY,
+		)
+	),
+
+	APP_DIRECTORY => array(
+		'templates' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_DIRECTORY,
+		'env' => array(
+			'cache' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY,
+		)
+	)
+);
+
 $config['db'] = array(
 	'host' => 'localhost',
 	'username' => 'safedriv_e_prod',

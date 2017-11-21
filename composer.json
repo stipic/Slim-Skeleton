@@ -9,7 +9,8 @@
         "slim/slim": "^3.0",
         "joshcam/mysqli-database-class": "dev-master",
 		"dyorg/slim-token-authentication": "^0.3.3",
-		"delight-im/auth": "^7.2"
+		"delight-im/auth": "^7.2",
+		"twig/twig": "^2.0"
     },
     "config": {
         "vendor-dir": "Plugins"
