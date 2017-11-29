@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $config['base_url'] = 'http://slimframework.kristijan.lan';
+$config['sub_dir'] = '/test';
 $config['api_authentication']['relaxed'] = array(
 	'local.safe-drive.org'
 );

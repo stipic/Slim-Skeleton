@@ -6,7 +6,7 @@ $config['addContentLengthHeader'] = FALSE;
 $config['determineRouteBeforeAppMiddleware'] = TRUE;
 $config['project_name'] = 'WebCore';
 $config['base_url'] = 'https://safe-drive.org';
-$config['sub_dir'] = '/test';
+$config['sub_dir'] = FALSE;
 $config['acp_path'] = 'ACP';
 
 $config['env_hostnames'] = array(

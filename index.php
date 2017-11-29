@@ -1,4 +1,9 @@
 <?php
+
+if(!defined('PHP_MAJOR_VERSION') || PHP_MAJOR_VERSION < 7) {
+	die('!@#$%& PHP 7+');
+}
+
 define('APP', __DIR__);
 define('PRODUCTION_ENV', 'production');
 define('STAGING_ENV', 'staging');
@@ -142,9 +147,8 @@ else
 		$container = $app->getContainer();
 		$auth = $container->get('Auth');
 
-		//$auth->login('kiki.stipic@gmail.com', '123321kiki123321');
 		if(!$auth->isLoggedIn()) {
-			die('E! Jbg nisi ulogiran...');
+			die('Nisi ulogiran... Do something...');
 		}
 
 		return $next($request, $response);
