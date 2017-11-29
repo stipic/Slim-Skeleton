@@ -14,17 +14,21 @@ class HomeController extends Controller
 
 	protected $_twig;
 
-	public $menu_array = array();
+	protected $_webcore;
 
 	public function __construct($c) 
 	{
 		$this->_container = $c;
 		$this->_db = $c->get('db_mysqli');
 		$this->_twig = $c->get('Twig');
+		$this->_webcore = $c->get('WebCore');
 	}
 
 	public function index(Request $request, Response $response, $args) 
 	{
+		$methods = $this->_webcore->load_class('Methods');
+		echo $methods->test();
+		
 		echo $this->_twig->render('index.twig', array('name' => 'Fabien'));
 	}
 
