@@ -1,7 +1,9 @@
 <?php
 
 if(!defined('PHP_MAJOR_VERSION') || PHP_MAJOR_VERSION < 7) {
+	// TODO baci exception koji otvara maintaince stranicu s error code-om
 	die('!@#$%& PHP 7+');
+	exit;
 }
 
 define('APP', __DIR__);
@@ -36,7 +38,7 @@ foreach($config['env_hostnames'] as $env => $computers) {
 }
 
 if(!isset($config['env'])) {
-	// Nema podešeni environment, baci na maintance page
+	// TODO baci exception koji otvara maintaince stranicu s error code-om
 	die('Nema podešeni environment, baci na maintance page');
 	exit;
 }
@@ -56,6 +58,8 @@ if(isset($config['sub_dir']) && $config['sub_dir'] !== NULL && $config['sub_dir'
 }
 
 if($server_url !== $base_config) {
+	// TODO baci exception koji otvara maintaince stranicu s error code-om
+	// TODO: vidjeti dali je bolje redaktirati ili baciti na maintance
 	header('Location: '.$base_config);
 	exit; die();
 }
@@ -150,6 +154,7 @@ else
 
 		if(!$auth->isLoggedIn()) {
 			die('Nisi ulogiran... Do something...');
+			exit;
 		}
 
 		return $next($request, $response);

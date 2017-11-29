@@ -23,7 +23,6 @@ $config['env_hostnames'] = array(
 );
 
 $config['twig'] = array(
-	
 	ADMIN_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_DIRECTORY,
 		'env' => array(
