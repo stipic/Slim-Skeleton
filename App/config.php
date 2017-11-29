@@ -4,6 +4,7 @@ defined('APP') OR exit('No direct script access allowed');
 $config['displayErrorDetails'] = TRUE;
 $config['addContentLengthHeader'] = FALSE;
 $config['determineRouteBeforeAppMiddleware'] = TRUE;
+
 $config['project_name'] = 'WebCore';
 $config['base_url'] = 'https://safe-drive.org';
 $config['sub_dir'] = FALSE;
@@ -26,14 +27,14 @@ $config['twig'] = array(
 	ADMIN_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY,
+			'cache' => /*APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY*/ false,
 		)
 	),
 
 	APP_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY,
+			'cache' => /*APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY*/ false,
 		)
 	)
 );

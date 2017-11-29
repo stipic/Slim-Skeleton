@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>{{title}}</title>
+		<meta charset="utf-8">
+		<link href="{{ 'auth.css' | css_root }}" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	 <div class="main">
+		<div class="login-form">
+			<h1>{{title}}</h1>
+				<div class="head">
+					<img src="{{ 'user_auth.png' | images_root }}" alt=""/>
+				</div>
+
+				{% if status is not empty %}
+					<div class="login-error">
+						<p>{{status}}</p>
+					</div>
+				{% endif %}
+
+				<form method="POST" action="{{ action }}">
+					<input type="text" class="text" name="email" value="EMAIL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EMAIL';}" >
+					<input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+					<div class="submit">
+						<input type="submit" value="LOGIN" >
+					</div>
+				</form>
+			</div>
+		</div>
+</body>
+</html>

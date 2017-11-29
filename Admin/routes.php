@@ -16,7 +16,7 @@ $routes = array(
 			'POST', 
 			'GET'
 		),
-		'controller' => 'ArticleController',
+		'controller' => 'DashboardController:users',
 		'module' => 'articles'
 	),
 

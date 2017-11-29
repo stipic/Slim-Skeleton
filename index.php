@@ -22,6 +22,19 @@ define('ADMIN_VIEW_DIRECTORY', 'Views');
 define('APP_VIEW_CACHE_DIRECTORY', 'Cache');
 define('ADMIN_VIEW_CACHE_DIRECTORY', 'Cache');
 define('SYSTEM_DIR', 'Libraries');
+define('STORAGE_DIRECTORY', 'Public');
+
+define('ASSETS_DIRECTORY', 'Assets');
+define('CSS_DIRECTORY', 'css');
+define('FONTS_DIRECTORY', 'fonts');
+define('IMAGES_DIRECTORY', 'images');
+define('SCRIPTS_DIRECTORY', 'scripts');
+
+define('ASSETS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY);
+define('CSS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . CSS_DIRECTORY);
+define('FONTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . FONTS_DIRECTORY);
+define('IMAGES_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . IMAGES_DIRECTORY);
+define('SCRIPTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . SCRIPTS_DIRECTORY);
 
 require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
@@ -150,12 +163,9 @@ else
 	$app->add(function(Request $request, Response $response, $next) use($app) {
 
 		$container = $app->getContainer();
-		$auth = $container->get('Auth');
-
-		if(!$auth->isLoggedIn()) {
-			die('Nisi ulogiran... Do something...');
-			exit;
-		}
+		$wc = $container->get('WebCore');
+		$auth = $wc->load_class('Auth');
+		$auth->TRY_access_admin($request, $response, $next);
 
 		return $next($request, $response);
 	});

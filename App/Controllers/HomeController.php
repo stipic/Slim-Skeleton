@@ -26,8 +26,8 @@ class HomeController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
-		$methods = $this->_webcore->load_class('Methods');
-		echo $methods->test();
+		/*$methods = $this->_webcore->load_class('Methods');
+		echo $methods->test();*/
 		
 		echo $this->_twig->render('index.twig', array('name' => 'Fabien'));
 	}

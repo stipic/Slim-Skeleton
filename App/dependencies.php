@@ -22,5 +22,36 @@ $container['Twig'] = function($container) use($config, $read_mode)
 {
 	$loader = new Twig_Loader_Filesystem($config['twig'][$read_mode]['templates']);
 	$twig = new Twig_Environment($loader, $config['twig'][$read_mode]['env']);
+
+	$filter = new Twig_Filter('assets_root', function ($string) use($config) {
+		return $config['base_url'] . '/'. ASSETS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('base_url', function ($string) use($config) {
+		return $config['base_url'] . (!empty($string) ? '/' . $string : '');
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('css_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. CSS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('fonts_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. FONTS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('images_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. IMAGES_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('scripts_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. SCRIPTS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
 	return $twig;
 };

@@ -17,6 +17,6 @@ class WebCore
 	public function load_class($class_name)
 	{
 		$dynamic = '\\Lib\\'.$class_name;
-		return new $dynamic();
+		return new $dynamic($this->_container, $this->_config);
 	}
 }
