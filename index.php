@@ -39,15 +39,25 @@ $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' :
 $base_url = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
 $server_url = $protocol.$base_url;
-if($server_url !== $config['base_url']) {
-	header('Location: '.$config['base_url']);
+$base_config = $config['base_url'];
+$ACP_key_to_read = 1;
+
+if(isset($config['sub_dir']) && $config['sub_dir'] !== NULL && $config['sub_dir'] !== FALSE) {
+	$server_url = $protocol.$base_url.$config['sub_dir'];
+	$base_config = $config['base_url'].$config['sub_dir'];
+	$sub_segments = explode('/', $config['sub_dir']);
+	$ACP_key_to_read = count($sub_segments);
+}
+
+if($server_url !== $base_config) {
+	header('Location: '.$base_config);
 	exit; die();
 }
 
 $read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
 $dynamic_namespace = NULL;
 $segments = explode('/', $uri);
-if(isset($segments[1]) && $segments[1] == $config['acp_path']) {
+if(isset($segments[$ACP_key_to_read]) && $segments[$ACP_key_to_read] == $config['acp_path']) {
 	$read_mode = ADMIN_DIRECTORY;
 }
 
