@@ -10,7 +10,7 @@ $config['base_url'] = 'https://safe-drive.org';
 $config['sub_dir'] = FALSE;
 $config['acp_path'] = 'ACP';
 
-$config['404_template'] = 'Errors/404.twig';
+$config['404_template'] = '404.twig';
 
 $config['env_hostnames'] = array(
 	DEVELOPMENT_ENV => array(
