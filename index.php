@@ -36,7 +36,7 @@ define('FONTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY 
 define('IMAGES_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . IMAGES_DIRECTORY);
 define('SCRIPTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . SCRIPTS_DIRECTORY);
 
-require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'config.php';
+require __DIR__.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
 
 $whoami = gethostname();
@@ -44,7 +44,7 @@ foreach($config['env_hostnames'] as $env => $computers) {
 	if(in_array($whoami, $computers)) {
 		$config['env'] = $env;
 		
-		$personal_config_path = __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.PERSONAL_CONFIG_DIRECTORY.DIRECTORY_SEPARATOR.$whoami.'.php';
+		$personal_config_path = __DIR__.DIRECTORY_SEPARATOR.PERSONAL_CONFIG_DIRECTORY.DIRECTORY_SEPARATOR.$whoami.'.php';
 		include $personal_config_path;
 		break;
 	}
@@ -89,7 +89,7 @@ $app = new \Slim\App(["settings" => $config]);
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
-require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'dependencies.php';
+require __DIR__.DIRECTORY_SEPARATOR.'dependencies.php';
 
 $controllers = array();
 if($read_mode == APP_DIRECTORY)
