@@ -11,12 +11,20 @@ class DashboardController extends Controller
 
 	protected $_db;
 
-	public $menu_array = array();
+	protected $_twig;
+
+	protected $_config;
+
+	protected $_data = array();
 
 	public function __construct($c) 
 	{
 		$this->_container = $c;
 		$this->_db = $c->get('db_mysqli');
+		$this->_twig = $c->get('Twig');
+		$this->_config = $c->get('settings');
+
+		$this->_data['base_url'] = $this->_config['base_url'];
 	}
 
 	public function index(Request $request, Response $response, $args) 
@@ -27,6 +35,6 @@ class DashboardController extends Controller
 
 	public function users(Request $request, Response $response, $args) 
 	{
-		die('Yo Users');
+		$this->_twig->display('layout.twig', $this->_data);
 	}
 }

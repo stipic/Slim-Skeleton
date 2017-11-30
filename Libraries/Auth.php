@@ -32,7 +32,7 @@ class Auth
 				try 
 				{
  					$this->_auth->login($email, $password);
- 					return $next($request, $response);
+ 					return TRUE;
 				}
 				catch (\Delight\Auth\InvalidEmailException $e) {
 					$error .= 'Wrong login credentials! #1';
@@ -51,7 +51,7 @@ class Auth
 		else 
 		{
 			if($this->_auth->hasRole(\Delight\Auth\Role::ADMIN) && $this->_auth->isNormal()) {
-				return $next($request, $response);
+				return TRUE;
 			}
 			else if($request->isPost()) {
 				$error .= 'Wrong login credentials! #5';

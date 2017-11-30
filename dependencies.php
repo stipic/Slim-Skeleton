@@ -53,6 +53,16 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	});
 	$twig->addFilter($filter);
 
+	$filter = new Twig_Filter('plugins_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. PLUGINS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
+	$filter = new Twig_Filter('less_root', function ($string) use($config) {
+		return  $config['base_url'] . '/'. LESS_ROOT . '/' . $string;
+	});
+	$twig->addFilter($filter);
+
 	return $twig;
 };
 
@@ -63,7 +73,6 @@ $container['notFoundHandler'] = function($container) use($config)
 		$twig->display($config['404_template'], array(
 			'title' => $config['project_name']
 		));
-		return $response;
+		exit;die();
 	};
-	return false;
 };
