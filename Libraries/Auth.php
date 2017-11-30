@@ -54,7 +54,7 @@ class Auth
 				return $next($request, $response);
 			}
 			else if($request->isPost()) {
-				$error .= 'Wrong login credentials!';
+				$error .= 'Wrong login credentials! #5';
 			}
 		}
 

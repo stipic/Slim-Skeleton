@@ -55,3 +55,10 @@ $container['Twig'] = function($container) use($config, $read_mode)
 
 	return $twig;
 };
+
+$container['notFoundHandler'] = function($container) use($config) 
+{
+	$twig = $container->get('Twig');
+	$twig->display($config['404_template'], array());
+	return false;
+};
