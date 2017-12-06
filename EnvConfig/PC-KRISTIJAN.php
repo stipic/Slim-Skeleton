@@ -19,3 +19,5 @@ $config['db'] = array(
 	'prefix' => '',
 	'charset' => 'utf8'
 );
+$config['twig'][ADMIN_DIRECTORY]['env']['cache'] = false;
+$config['twig'][APP_DIRECTORY]['env']['cache'] = false;

@@ -24,17 +24,23 @@ class DashboardController extends Controller
 		$this->_twig = $c->get('Twig');
 		$this->_config = $c->get('settings');
 
+		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_data['base_url'] = $this->_config['base_url'];
 	}
 
 	public function index(Request $request, Response $response, $args) 
 	{
-		var_dump($_GET);
-		die('Yo');
+		$get = $request->getQueryParams();
+
+		$this->_data['page_template'] = 'dashboard.twig';
+		$this->_twig->display('layout.twig', $this->_data);
 	}
 
 	public function users(Request $request, Response $response, $args) 
 	{
+		$get = $request->getQueryParams();
+
+		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_twig->display('layout.twig', $this->_data);
 	}
 }

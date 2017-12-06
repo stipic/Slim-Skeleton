@@ -63,6 +63,11 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	});
 	$twig->addFilter($filter);
 
+	$filter = new Twig_Filter('acp_base', function ($string) use($config) {
+		return $config['acp_base'] . (!empty($string) ? '/' . $string : '');
+	});
+	$twig->addFilter($filter);
+
 	return $twig;
 };
 

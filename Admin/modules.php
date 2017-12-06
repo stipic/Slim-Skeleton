@@ -1,5 +1,5 @@
 <?php
-$module['dashboard'] = true;
+$module[ADMIN_ROOT_MODULE] = true;
 $module['articles'] = true;
 $module['sections'] = true;
 $module['users'] = true

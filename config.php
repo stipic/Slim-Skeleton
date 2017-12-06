@@ -11,6 +11,7 @@ $config['sub_dir'] = FALSE;
 $config['acp_path'] = 'ACP';
 
 $config['404_template'] = '404/404.twig';
+$config['maintenance_template'] = 'maintenance.twig';
 
 $config['env_hostnames'] = array(
 	DEVELOPMENT_ENV => array(
@@ -29,14 +30,14 @@ $config['twig'] = array(
 	ADMIN_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => /*APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY*/ false,
+			'cache' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY,
 		)
 	),
 
 	APP_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => /*APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY*/ false,
+			'cache' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY,
 		)
 	)
 );

@@ -8,7 +8,7 @@ $routes = array(
 			'GET'
 		),
 		'controller' => 'DashboardController',
-		'module' => 'dashboard'
+		'module' => ADMIN_ROOT_MODULE
 	),
 
 	'/articles' => array(

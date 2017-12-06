@@ -24,6 +24,8 @@ define('ADMIN_VIEW_CACHE_DIRECTORY', 'Cache');
 define('SYSTEM_DIR', 'Libraries');
 define('STORAGE_DIRECTORY', 'Public');
 
+define('ADMIN_ROOT_MODULE', 'dashboard');
+
 define('ASSETS_DIRECTORY', 'Assets');
 define('CSS_DIRECTORY', 'css');
 define('FONTS_DIRECTORY', 'fonts');
@@ -60,7 +62,11 @@ if(!isset($config['env'])) {
 	exit;
 }
 
-$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+$protocol  = "http://";
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+	$protocol  = "https://";
+}
+
 $base_url = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
 $server_url = $protocol.$base_url;
@@ -81,6 +87,7 @@ if($server_url !== $base_config) {
 	exit; die();
 }
 
+$config['acp_base'] = $base_config.'/'.$config['acp_path'].'/'; // ne mora uvijek biti tocno, ali se koristi samo za Twig Filter pa nije toliko hitno testirati
 $read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
 $dynamic_namespace = NULL;
 $segments = explode('/', $uri);
@@ -153,7 +160,7 @@ else
 			$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
 			$full_controller = $controller . ':' . $method;
 			
-			$app->map($param['methods'], '/' . $config['acp_path'] . $route, $full_controller);
+			$app->map($param['methods'], '/' . $config['acp_path'] . $route, $full_controller)->setName($param['module']);
 			if(!in_array($param['controller'], $controllers)) {
 				$controllers[] = $param['controller'];
 			}
@@ -164,13 +171,27 @@ else
 		return new Admin\Controllers\Controller($container);
 	};
 
-	$app->add(function(Request $request, Response $response, $next) use($app) {
-
+	$app->add(function(Request $request, Response $response, $next) use($app, $uri, $config) 
+	{
 		$container = $app->getContainer();
 		$wc = $container->get('WebCore');
 		$auth = $wc->load_class('Auth');
 		$auth->TRY_access_admin($request, $response, $next);
 
+		/*$admin_uri = explode('/', $uri);
+		print_r($admin_uri);exit;
+		$redirect = FALSE;
+		if(!empty($admin_uri[count($admin_uri) - 1]) && $admin_uri[count($admin_uri) - 2] == $config['acp_path']) {
+			$redirect = TRUE;
+		}
+
+		if($redirect == TRUE) 
+		{
+			// TODO: napraviti da ukoliko pristupa s npr. /ACP/ERG/REG/E/RG/ERG/ da u trenutku logina
+			// zadrži /ERG/REG/E/RG/ERG/
+			$admin_uri = $request->getUri()->withPath($this->router->pathFor(ADMIN_ROOT_MODULE));
+			return $response = $response->withRedirect($admin_uri, 301);
+		}*/
 		return $next($request, $response);
 	});
 }
