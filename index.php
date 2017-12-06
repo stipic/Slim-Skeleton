@@ -87,7 +87,14 @@ if($server_url !== $base_config) {
 	exit; die();
 }
 
+
 $config['acp_base'] = $base_config.'/'.$config['acp_path'].'/'; // ne mora uvijek biti tocno, ali se koristi samo za Twig Filter pa nije toliko hitno testirati
+
+putenv('LC_ALL=' . $config['languages'][$config['current_lang']]['locale']);
+setlocale(LC_ALL, $config['languages'][$config['current_lang']]['locale']);
+bindtextdomain($config['text_domain'], "./locale");
+textdomain($config['text_domain']);
+
 $read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
 $dynamic_namespace = NULL;
 $segments = explode('/', $uri);

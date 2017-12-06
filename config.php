@@ -4,6 +4,34 @@ defined('APP') OR exit('No direct script access allowed');
 $config['displayErrorDetails'] = TRUE;
 $config['addContentLengthHeader'] = FALSE;
 $config['determineRouteBeforeAppMiddleware'] = TRUE;
+$config['text_domain'] = 'wc';
+
+$config['languages'] = array(
+	'hr' => array(
+		'locale' => 'hr_HR',
+		'date_format' => '',
+		'time_format' => '',
+		'timezone' => '',
+		'lang_name' => 'Croatian'
+	),
+	'en' => array(
+		'locale' => 'en_EN',
+		'date_format' => '',
+		'time_format' => '',
+		'timezone' => '',
+		'lang_name' => 'English'
+	),
+	'rs' => array(
+		'locale' => 'rs_RS',
+		'date_format' => '',
+		'time_format' => '',
+		'timezone' => '',
+		'lang_name' => 'Serbian'
+	)
+);
+$config['url_lang_flags'] = TRUE; // or FALSE for cookie storage
+$config['current_lang'] = 'hr'; // default hr
+$config['default_language_use_flag'] = FALSE; // defualtni jezik nece imati language flagove u URLu
 
 $config['project_name'] = 'WebCore';
 $config['base_url'] = 'https://safe-drive.org';

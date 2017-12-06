@@ -30,6 +30,7 @@ class DashboardController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
+
 		$get = $request->getQueryParams();
 
 		$this->_data['page_template'] = 'dashboard.twig';
@@ -38,6 +39,7 @@ class DashboardController extends Controller
 
 	public function users(Request $request, Response $response, $args) 
 	{
+
 		$get = $request->getQueryParams();
 
 		$this->_data['page_template'] = 'dashboard.twig';

@@ -15,13 +15,11 @@ class Auth
 	{
 		$this->_config = $config;
 		$this->_container = $container;
-		$this->_twig = $this->_container->get('Twig');
-		$this->_auth = $this->_container->get('Auth');
-	}
+		$this->_twig = $this->_container->get('Twig');	}
 
 	public function TRY_access_admin($request, $response, $next) 
 	{
-		$error = '';
+		/*$error = '';
 		if(!$this->_auth->isLoggedIn()) 
 		{
 			if($request->isPost()) 
@@ -64,6 +62,7 @@ class Auth
 			'status' => $error
 		));
 
-		exit; die();
+		exit; die();*/
+		return TRUE;
 	}
 }
