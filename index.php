@@ -81,6 +81,11 @@ if($server_url !== $base_config) {
 	exit; die();
 }
 
+putenv('LC_ALL=' . $config['locale']);
+setlocale(LC_ALL, $config['locale']);
+bindtextdomain($config['text_domain'], "./locale");
+textdomain($config['text_domain']);
+
 $read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
 $dynamic_namespace = NULL;
 $segments = explode('/', $uri);

@@ -29,12 +29,13 @@ class DashboardController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
-		var_dump($_GET);
-		die('Yo');
+		$this->_data['page_template'] = 'dashboard.twig';
+		$this->_twig->display('layout.twig', $this->_data);
 	}
 
 	public function users(Request $request, Response $response, $args) 
 	{
+		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_twig->display('layout.twig', $this->_data);
 	}
 }

@@ -63,6 +63,11 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	});
 	$twig->addFilter($filter);
 
+	$gettext = new Twig_SimpleFunction('message', function($message) {
+		return _($message);
+	});
+	$twig->addFunction($gettext);
+
 	return $twig;
 };
 
