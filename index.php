@@ -1,4 +1,17 @@
 <?php
+/**
+ *
+ *
+ *	██╗    ██╗███████╗██████╗  ██████╗ ██████╗ ██████╗ ███████╗
+ *	██║    ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗██╔══██╗██╔════╝
+ *	██║ █╗ ██║█████╗  ██████╔╝██║     ██║   ██║██████╔╝█████╗  
+ *	██║███╗██║██╔══╝  ██╔══██╗██║     ██║   ██║██╔══██╗██╔══╝  
+ *	╚███╔███╔╝███████╗██████╔╝╚██████╗╚██████╔╝██║  ██║███████╗
+ *	 ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+ *
+ *
+ * 
+ */
 
 if(!defined('PHP_MAJOR_VERSION') || PHP_MAJOR_VERSION < 7) {
 	// TODO baci exception koji otvara maintaince stranicu s error code-om
@@ -26,7 +39,7 @@ define('STORAGE_DIRECTORY', 'Public');
 
 define('ADMIN_ROOT_MODULE', 'dashboard');
 
-define('ASSETS_DIRECTORY', 'Assets');
+define('ASSETS_DIRECTORY', 'assets');
 define('CSS_DIRECTORY', 'css');
 define('FONTS_DIRECTORY', 'fonts');
 define('IMAGES_DIRECTORY', 'images');
@@ -34,13 +47,13 @@ define('SCRIPTS_DIRECTORY', 'scripts');
 define('PLUGINS_DIRECTORY', 'plugins');
 define('LESS_DIRECTORY', 'less');
 
-define('ASSETS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY);
-define('CSS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . CSS_DIRECTORY);
-define('FONTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . FONTS_DIRECTORY);
-define('IMAGES_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . IMAGES_DIRECTORY);
-define('SCRIPTS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . SCRIPTS_DIRECTORY);
-define('PLUGINS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . PLUGINS_DIRECTORY);
-define('LESS_ROOT', STORAGE_DIRECTORY . DIRECTORY_SEPARATOR . ASSETS_DIRECTORY . DIRECTORY_SEPARATOR . LESS_DIRECTORY);
+define('ASSETS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY);
+define('CSS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . CSS_DIRECTORY);
+define('FONTS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . FONTS_DIRECTORY);
+define('IMAGES_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . IMAGES_DIRECTORY);
+define('SCRIPTS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . SCRIPTS_DIRECTORY);
+define('PLUGINS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . PLUGINS_DIRECTORY);
+define('LESS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . LESS_DIRECTORY);
 
 require __DIR__.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
@@ -67,6 +80,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
 	$protocol  = "https://";
 }
 
+$activity_group_id = -1;
 $base_url = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
 $server_url = $protocol.$base_url;
@@ -115,36 +129,37 @@ if($read_mode == APP_DIRECTORY)
 	require __DIR__.DIRECTORY_SEPARATOR.APP_DIRECTORY.DIRECTORY_SEPARATOR.'routes.php';
 	$dynamic_namespace = APP_DIRECTORY;
 
-	if(!empty($single_routes)) {
-		foreach($single_routes as $route => $param) {
-
+	if(!empty($single_routes)) 
+	{
+		foreach($single_routes as $route => $param) 
+		{
 			$c_and_method = explode(':', $param['controller']);
 			$controller = $c_and_method[0];
 			$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
 			$full_controller = $controller . ':' . $method;
 			
-			$app->map($param['methods'], $route, $full_controller);
-			if(!in_array($param['controller'], $controllers)) {
-				$controllers[] = $param['controller'];
-			}
+			$app->map($param['methods'], $route, $full_controller)->setName(strtolower($param['name']));
+			$controllers[$controller] = $controller;
 		}
 	}
 
-	if(!empty($grouped_routes)) {
-		foreach($grouped_routes as $group => $routes) {
-			$app->group($group, function() use($routes, $app, &$controllers) {
-				foreach($routes as $route => $param) {
+	if(!empty($grouped_routes)) 
+	{
+		foreach($grouped_routes as $group => $routes) 
+		{
+			$app->group($group, function() use($routes, $app, &$controllers) 
+			{
+				foreach($routes as $route => $param) 
+				{
 
 					$c_and_method = explode(':', $param['controller']);
 					$controller = $c_and_method[0];
 					$method = (empty($c_and_method[1]) ? DEFAULT_CONTROLLER_METHOD : $c_and_method[1]);
 					$full_controller = $controller . ':' . $method;
 
-					$app->map($param['methods'], $route, $full_controller)->setName($param['route_name']);
+					$app->map($param['methods'], $route, $full_controller)->setName(strtolower($param['route_name']));
 
-					if(!in_array($param['controller'], $controllers)) {
-						$controllers[] = $param['controller'];
-					}
+					$controllers[$controller] = $controller;
 				}
 			});
 		}
@@ -168,9 +183,7 @@ else
 			$full_controller = $controller . ':' . $method;
 			
 			$app->map($param['methods'], '/' . $config['acp_path'] . $route, $full_controller)->setName($param['module']);
-			if(!in_array($param['controller'], $controllers)) {
-				$controllers[] = $param['controller'];
-			}
+			$controllers[$controller] = $controller;
 		}
 	}
 
@@ -182,8 +195,7 @@ else
 	{
 		$container = $app->getContainer();
 		$wc = $container->get('WebCore');
-		$auth = $wc->load_class('Auth');
-		$auth->TRY_access_admin($request, $response, $next);
+		$wc->TRY_access_admin($request, $response, $next);
 
 		/*$admin_uri = explode('/', $uri);
 		print_r($admin_uri);exit;
@@ -203,11 +215,34 @@ else
 	});
 }
 
-foreach($controllers as $controller) {
-	$container[$controller] = function($container) use($controller, $dynamic_namespace) {
+foreach($controllers as $controller) 
+{
+	$container[$controller] = function($container) use($dynamic_namespace, $controller) {
 		$dynamic_controller = '\\'.$dynamic_namespace.'\\'.CONTROLLERS_DIRECTORY.'\\'.$controller;
 		return new $dynamic_controller($container);
 	};
 }
 
 $app->run();
+
+// AFTER ALL TRACK LOG
+if($config['db_trace_activity_log'] == TRUE)
+{
+	$container = $app->getContainer();
+	$db = $container->get('db_mysqli');
+	$wc = $container->get('WebCore');
+	$session_trace = print_r($db->trace, true);
+	
+	$data = array(
+		"activity_group_id" => $activity_group_id,
+		"timestamp" => time(),
+		"log" => $session_trace 
+	);
+	$db->insert("activity_log", $data);
+
+	$data = array(
+		"finished" => time()
+	);
+	$db->where('id', $activity_group_id);
+	$db->update("activity_group", $data);
+}

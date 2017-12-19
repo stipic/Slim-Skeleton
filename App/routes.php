@@ -19,7 +19,8 @@ $single_routes = array(
 			'POST', 
 			'GET'
 		),
-		'controller' => 'HomeController'
+		'controller' => 'HomeController',
+		'name' => 'Naslovnica'
 	)
 );
 

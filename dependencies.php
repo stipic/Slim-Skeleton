@@ -2,14 +2,32 @@
 defined('APP') OR exit('No direct script access allowed');
 
 $container = $app->getContainer();
-$container['db_mysqli'] = function($container)
+$container['db_mysqli'] = function($container) use($config, &$activity_group_id)
 {
-	return new MysqliDb($container['settings']['db']);
+	$db_mysqli = new MysqliDb($container['settings']['db']);
+	if($config['db_trace_activity_log'] == TRUE)
+	{
+		$db_mysqli->setTrace(true);
+		$wc = $container->get('WebCore');
+		$data = array(
+			"started" => time(),
+			"finished" => -1,
+			"ip" => $wc->getIP() 
+		);
+		$activity_group_id = $db_mysqli->insert("activity_group", $data);
+	}
+	return $db_mysqli;
 };
 
 $container['WebCore'] = function($container) use($config)
 {
 	return new \Lib\WebCore($container, $config);
+};
+
+$container['Auth'] = function($container) use($config)
+{
+	$db = new \PDO('mysql:dbname='.$config['db']['db'].';host='.$config['db']['host'].';charset='.$config['db']['charset'], $config['db']['username'], $config['db']['password']);
+	return new \Delight\Auth\Auth($db);
 };
 
 $container['Twig'] = function($container) use($config, $read_mode)
@@ -57,6 +75,10 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	});
 	$twig->addFilter($filter);
 
+	$filter = new Twig_Filter('google_maps_key', function ($string) use($config) {
+		return  $config['google_maps_key'] . $string;
+	});
+	$twig->addFilter($filter);
 
 	$filter = new Twig_Filter('acp_base', function ($string) use($config) {
 		return $config['acp_base'] . (!empty($string) ? '/' . $string : '');

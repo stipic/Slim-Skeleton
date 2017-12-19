@@ -3,6 +3,7 @@ defined('APP') OR exit('No direct script access allowed');
 
 $config['displayErrorDetails'] = TRUE;
 $config['addContentLengthHeader'] = FALSE;
+$config['db_trace_activity_log'] = TRUE;
 $config['determineRouteBeforeAppMiddleware'] = TRUE;
 $config['text_domain'] = 'wc';
 
@@ -41,6 +42,18 @@ $config['acp_path'] = 'ACP';
 $config['404_template'] = '404/404.twig';
 $config['maintenance_template'] = 'maintenance.twig';
 
+$config['google_maps_key'] = 'AIzaSyBzXj_zQHtEpo0piY1cA_qdTgUyp5OCafA';
+$config['mailjet_api'] = array(
+	'host' => 'in-v3.mailjet.com',
+	'username' => 'fbaba1f704d54754cc78abf0da284972',
+	'password' => '4e8895e6a10196aff6f4d8bbc664d29d'
+);
+
+$config['email'] = array(
+	'default_to' => 'kiki.stipic@gmail.com',
+	'default_from' => 'web@safedrive.hr'
+);
+
 $config['env_hostnames'] = array(
 	DEVELOPMENT_ENV => array(
 		'PC-KRISTIJAN'
@@ -58,14 +71,14 @@ $config['twig'] = array(
 	ADMIN_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => APP . DIRECTORY_SEPARATOR . ADMIN_DIRECTORY . DIRECTORY_SEPARATOR . ADMIN_VIEW_CACHE_DIRECTORY,
+			'cache' => FALSE,
 		)
 	),
 
 	APP_DIRECTORY => array(
 		'templates' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_DIRECTORY,
 		'env' => array(
-			'cache' => APP . DIRECTORY_SEPARATOR . APP_DIRECTORY . DIRECTORY_SEPARATOR . APP_VIEW_CACHE_DIRECTORY,
+			'cache' => FALSE,
 		)
 	)
 );

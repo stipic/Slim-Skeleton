@@ -28,7 +28,7 @@ class HomeController extends Controller
 	{
 		/*$methods = $this->_webcore->load_class('Methods');
 		echo $methods->test();*/
-		
+		$this->_db->get("users");
 		echo $this->_twig->render('index.twig', array('name' => 'Fabien'));
 	}
 
