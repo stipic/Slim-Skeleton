@@ -2,7 +2,7 @@
 namespace Lib;
 defined('APP') OR exit('No direct script access allowed');
 
-class Flash extends WebCore
+class Form extends WebCore
 {
 	private $_config = array();
 

@@ -93,13 +93,25 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	return $twig;
 };
 
-$container['notFoundHandler'] = function($container) use($config) 
+$container['notFoundHandler'] = function($container) use($config)
+{
+	return responseErrorMessage($container, $config, 404);
+};
+
+$container['notAllowedHandler'] = function($container) use($config)
+{
+	return responseErrorMessage($container, $config, 405);
+};
+
+function responseErrorMessage($container, $config, $status) 
 {
 	$twig = $container->get('Twig');
-	return function ($request, $response) use($config, $twig) {
+	return function($request, $response) use($config, $twig, $status) : string {
 		$twig->display($config['404_template'], array(
-			'title' => $config['project_name']
+			'template' => $config['404_template'],
+			'title' => $config['project_name'],
+			'status' => $status
 		));
 		exit;die();
 	};
-};
+}
