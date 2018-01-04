@@ -1,6 +1,6 @@
 <?php
 $module[ADMIN_ROOT_MODULE] = true;
-$module['articles'] = true;
+$module['language'] = true;
 $module['sections'] = true;
 $module['users'] = true
 

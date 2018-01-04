@@ -5,7 +5,7 @@ $container = $app->getContainer();
 $container['db_mysqli'] = function($container) use($config, &$activity_group_id)
 {
 	$db_mysqli = new MysqliDb($container['settings']['db']);
-	if($config['db_trace_activity_log'] == TRUE)
+	if($config['activity_log'] == TRUE)
 	{
 		$db_mysqli->setTrace(true);
 		$wc = $container->get('WebCore');
@@ -81,7 +81,7 @@ $container['Twig'] = function($container) use($config, $read_mode)
 	$twig->addFilter($filter);
 
 	$filter = new Twig_Filter('acp_base', function ($string) use($config) {
-		return $config['acp_base'] . (!empty($string) ? '/' . $string : '');
+		return $config['acp_base'] . (!empty($string) ? $string : '');
 	});
 	$twig->addFilter($filter);
 

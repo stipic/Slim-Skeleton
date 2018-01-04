@@ -1,0 +1,256 @@
+<div id="map-container" class="fullwidth-home-map">
+
+    <div id="map" data-map-zoom="12"></div>
+
+	<div class="main-search-inner">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					
+					<div class="main-search-input">
+
+						<div class="main-search-input-item location">
+							<input type="text" id="mylocation" placeholder="{{ message("Vaša trenutna lokacija...") }}" value="" />
+							<a href="#" id="my-loc"><i class="fa fa-dot-circle-o"></i></a>
+						</div>
+
+						<div class="main-search-input-item">
+							<input type="text" id="finishLocation" placeholder="{{ message("Željena destinacija...") }}" value="" />
+						</div>
+
+						<button class="button" id="calculate">{{ message("Izračunaj") }}</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<a href="{{ 'price-list' | base_url }}" class="flip-banner parallax" data-color="#fa5b0f" data-color-opacity="0.85">
+	<div class="flip-banner-content">
+		<h2 class="flip-visible">{{ message("24 sata dnevno 7 dana u tjedu 365 dana u godini") }}<br />{{ message("Naručite svog vozača preko sms-a, viber i whatsapp mobilne aplikacije na broj 091 5820673") }}</h2><br />
+		<h2 class="flip-hidden">{{ message("Radimo 24 sata bez prestanka") }} <i class="sl sl-icon-arrow-right"></i></h2>
+	</div>
+</a>
+
+<section class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#f9f9f9">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3 class="headline centered">
+					{{ message("Mišljenje korisnika") }}
+					<span class="margin-top-25">{{ message("Vaše mišljenje nam je vrlo bitno. Prikupljamo iskustva, savjete, prijedloge i kritike naših korisnika kako bismo Vam i u budućnosti bili u mogućnosti pružiti što kvalitetniju uslugu.") }}</span>
+				</h3>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="fullwidth-carousel-container margin-top-20">
+		<div class="testimonial-carousel testimonials">
+
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial">{{ message("Našla sam se sa društvom na kavi, stvar se brzo otela kontroli i popili smo koju čašicu previše. Skoro cijeli dan na radiju pričaju kako policija provodi akciju alkotestiranja vozača. Jedan od prijatelja iz društva se sjetio pozvati Safe Drive tim da ga odveze kući. Na zahtjev svih nas vrlo brzo došla su još tri vozača i cijelo društvo se sigurno vratila svojim kućama") }}</div>
+				</div>
+				<div class="testimonial-author">
+					<img src="images/happy-client-01.jpg" alt="">
+					<h4>{{ message("Marina, 34") }} <span>{{ message("Velika Gorica") }}</span></h4>
+				</div>
+			</div>
+
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial">{{ message("Nisam imao pojma da ovako nešto kod nas postoji, slučajno sam vidio reklamu na internetu i prvom prilikom koristio njihovu uslugu. Vrlo ljubazan vozač vratio me kući u pripitom stanju. Učlanio sam se u njihov klub i uslugu ću sigurno koristiti ponovo.") }}</div>
+				</div>
+				<div class="testimonial-author">
+					<img src="images/happy-client-01.jpg" alt="">
+					<h4>{{ message("Damir, 26") }} <span>{{ message("Zagreb, Dubrava") }}</span></h4>
+				</div>
+			</div>
+
+			<div class="fw-carousel-review">
+				<div class="testimonial-box">
+					<div class="testimonial">{{ message("Prezadovoljan sam obavljenom uslugom, svaka pohvala Safe Drive timu!") }}</div>
+				</div>
+				<div class="testimonial-author">
+					<img src="images/happy-client-01.jpg" alt="">
+					<h4>{{ message("Matej, 23") }} <span>{{ message("Zagreb, Trešnjevka") }}</span></h4>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+<div class="container margin-top-70">
+	<div class="row">
+
+		<div class="col-md-12">
+			<h3 class="headline centered margin-bottom-45">
+				{{ message("Događaji na kojima smo prisutni") }}
+				<span>{{ message("Postanite naš poslovni partner i sami uredite svoj prostor na našoj stranici.") }}</span>
+			</h3>
+		</div>
+
+		<div class="col-md-12">
+			<div class="simple-slick-carousel dots-nav">
+
+			<div class="carousel-item">
+				<a href="listings-single-page.html" class="listing-item-container">
+					<div class="listing-item">
+						<img src="{{ 'restoran-1.jpg' | images_root }}" alt="">
+
+						<div class="listing-badge now-open">{{ message("Otvoreno!") }}</div>
+						
+						<div class="listing-item-content">
+							<span class="tag">{{ message("Hrana") }}</span>
+							<h3>{{ message("Ime restorana") }}</h3>
+							<span>{{ message("Adresa restorana") }}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="listings-single-page.html" class="listing-item-container">
+					<div class="listing-item">
+						<img src="{{ 'restoran-Igor.jpg' | images_root }}" alt="">
+
+						<div class="listing-badge now-open">{{ message("Otvoreno!") }}</div>
+						
+						<div class="listing-item-content">
+							<span class="tag">{{ message("Hrana") }}</span>
+							<h3>{{ message("Ime restorana") }}</h3>
+							<span>{{ message("Adresa restorana") }}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="listings-single-page.html" class="listing-item-container">
+					<div class="listing-item">
+						<img src="{{ 'losos-restoran.jpg' | images_root }}" alt="">
+
+						<div class="listing-badge now-open">{{ message("Otvoreno!") }}</div>
+						
+						<div class="listing-item-content">
+							<span class="tag">{{ message("Hrana") }}</span>
+							<h3>{{ message("Ime restorana") }}</h3>
+							<span>{{ message("Adresa restorana") }}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			
+			</div>
+			
+		</div>
+
+	</div>
+</div>
+<div class="parallax"
+	data-background="{{ 'Partners.jpg' | images_root }}"
+	data-color="#36383e"
+	data-color-opacity="0.8"
+	data-img-width="1600"
+	data-img-height="500">
+
+	<div class="text-content white-font">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6 col-sm-8">
+					<h2>{{ message("Postanite poslovni korisnik Safe Drive usluge") }}</h2>
+					<p>{{ message("Pojednostavnite svoje poslovanje uz našu ponudu usluga za poslovne korisnike. Pošaljite upit i postanite poslovni korisnik Safe Drive usluge. Obratite nam se sa povjerenjem.") }}</p>
+					<a href="{{ 'premium' | base_url }}" class="button margin-top-25">{{ message("Pogledajte program za poslovne korisnike") }}</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+
+<section class="fullwidth margin-top-0 padding-top-75 padding-bottom-65" data-background-color="#fff">
+
+	<div class="container">
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="headline centered margin-bottom-50">
+					{{ message("Naša ponuda") }}
+				</h3>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="pricing-container margin-top-30">
+
+					<div class="plan">
+
+						<div class="plan-price">
+							<h3>{{ message("Premium usluga") }}</h3>
+							<span class="period">{{ message("Najam vozača za proslave.") }}</span>
+						</div>
+
+						<div class="plan-features">
+							<ul>
+								<li>{{ message("Ostavite dobar dojam i pobrinite se za siguran povratak svih Vaših uzvanika njihovim kućama.") }}</li>
+							</ul>
+							<a class="button border" href="{{ 'contact' | base_url }}">{{ message("Naruči!") }}</a>
+						</div>
+
+					</div>
+
+					<div class="plan featured">
+
+						<div class="plan-price">
+							<h3>{{ message("Osnovna usluga") }}</h3>
+							<span class="value">{{ message("Već od 90kn") }}</span>
+							<span class="period">{{ message("Najam vozača za udaljenosti od 10-25 km.") }}</span>
+						</div>
+
+						<div class="plan-features">
+							<ul>
+								<li>{{ message("Brzi dolazak na Vašu lokaciju") }}</li>
+								<li>{{ message("Sigurna i udobna vožnja na lokaciju po Vašoj želji") }}</li>
+								<li>{{ message("Ne riskirate!") }}</li>
+							</ul>
+							<a class="button border" href="{{ 'contact' | base_url }}">{{ message("Naruči!") }}</a>
+						</div>
+
+					</div>
+
+					<div class="plan">
+
+						<div class="plan-price">
+							<h3>{{ message("Postani član") }}</h3>
+							<span class="period">{{ message("Iskoristite sve pogodnosti Vašeg članstva u Safe Drive-u.") }}</span>
+						</div>
+
+						<div class="plan-features">
+							<ul>
+								<li>{{ message("Ova opcija Vam omogućava primjenu tjednih cjena preko vikenda.") }}</li>
+							</ul>
+							<a href="#sign-in-dialog" class="popup-with-zoom-anim button border" href="{{ 'contact' | base_url }}">{{ message("Postani član") }}</a>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</section>

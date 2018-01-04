@@ -5,7 +5,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top m-b-0">
         <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-            <div class="top-left-part"><a class="logo" href="{{ '' | acp_base }}"><b><img src="../plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><img src="../plugins/images/eliteadmin-text.png" alt="home" /></span></a></div>
+            <div class="top-left-part"><a class="logo" href="{{ '' | acp_base }}"><b><img style="max-height: 60px;" src="{{ 'wc_logo.png' | images_root }}" /></b></a></div>
             <ul class="nav navbar-top-links navbar-left hidden-xs">
                 <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
                 <li>
@@ -230,7 +230,7 @@
         </span> </div>
                     <!-- /input-group -->
                 </li>
-                <li> <a href="index.html" class="waves-effect active"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span></a>
+                <li> <a href="{{ '' | acp_base }}" class="waves-effect active"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span></a>
 
                 </li>
                 <li> <a href="#" class="waves-effect"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Sadržaj<span class="fa arrow"></span></span></a>
@@ -242,7 +242,7 @@
                 </li>
                 <li> <a href="forms.html" class="waves-effect"><i data-icon="&#xe00b;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Builder<span class="fa arrow"></span></span></a>
                 </li>
-                <li> <a href="tables.html" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Jezici<span class="fa arrow"></span></span></a>
+                <li> <a href="{{ 'languages' | acp_base }}" class="waves-effect"><i data-icon="O" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Jezici<span class="fa arrow"></span></span></a>
                    
                 </li>
                 <li> <a href="#" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Extra<span class="fa arrow"></span></span></a>

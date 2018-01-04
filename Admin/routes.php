@@ -11,14 +11,27 @@ $routes = array(
 		'module' => ADMIN_ROOT_MODULE
 	),
 
-	'/articles' => array(
+	// =============[ LANGUAGES ] =============[
+
+	'/languages' => array(
 		'methods' => array(
 			'POST', 
 			'GET'
 		),
-		'controller' => 'DashboardController:users',
-		'module' => 'articles'
+		'controller' => 'LanguageController:index',
+		'module' => 'languages'
 	),
+
+	'/languages/scanMessages' => array(
+		'methods' => array(
+			'POST'
+		),
+		'controller' => 'LanguageController:scan',
+		'module' => 'languages'
+	),
+
+
+
 
 	'/sections' => array(
 		'methods' => array(

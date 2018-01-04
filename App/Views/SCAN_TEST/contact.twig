@@ -1,0 +1,92 @@
+<div id="titlebar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>{{ message("Kontakt") }}</h2>
+				<nav id="breadcrumbs">
+					<ul>
+						<li><a href="{{ '' | base_url }}">{{ message("Home") }}</a></li>
+						<li>{{ message("Kontakt") }}</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+		<!-- Contact Details -->
+		<div class="col-md-4">
+			<!-- Contact Details -->
+			<div class="sidebar-textbox">
+
+				<ul class="contact-details">
+					<li><i class="im im-icon-Phone-2"></i> <strong>{{ message("Telefon:") }}</strong> <span>{{ message("01 / 2069 287") }} </span></li>
+					<li><i class="im im-icon-Envelope"></i> <strong>{{ message("E-Mail:") }}</strong> <span><a href="#">{{ message("info@safedrive.hr") }}</a></span></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="col-md-8">
+
+			{% if flash.type is not empty %}
+				
+				<div class="notification {{ flash.type }} closeable">
+					<p>{{ flash.message }}</p>
+					<a class="close"></a>
+				</div>
+				
+			{% endif %}
+
+			<section id="contact">
+				<h4 class="headline margin-bottom-35">{{ message("Kontakt") }}</h4>
+
+				<div id="contact-message"></div> 
+
+					<form method="POST" action="{{ 'contact' | base_url }}" name="contactform" id="contactform" autocomplete="on">
+
+					<div class="row">
+						<div class="col-md-6">
+							<div>
+								<input name="name" type="text" id="name" value="{{ storage.name | raw }}" placeholder="{{ message("Vaše cijenjeno ime") }}" />
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div>
+								<input name="surname" type="text" id="surname" value="{{ storage.surname | raw }}" placeholder="{{ message("Vaše cijenjeno prezime") }}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div>
+								<input name="subject" type="text" id="subject" value="{{ storage.subject | raw }}" placeholder="{{ message("Naslov") }}" />
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div>
+								<input name="email" type="text" id="email" value="{{ storage.email | raw }}" placeholder="{{ message("Vaša email adresa") }}" />
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<textarea name="comments" cols="40" rows="3" id="comments" placeholder="{{ message("Poruka...") }}" spellcheck="true">{{ storage.message | raw }}</textarea>
+					</div>
+
+					<input type="submit" class="submit button" id="submit" value="{{ message("Pošalji") }}" />
+
+					</form>
+			</section>
+		</div>
+
+	</div>
+
+</div>

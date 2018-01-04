@@ -1,0 +1,128 @@
+<div id="titlebar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h2>{{ message("Poslovni korisnici") }}</h2>
+
+				<nav id="breadcrumbs">
+					<ul>
+						<li><a href="{{ '' | base_url }}">{{ message("Home") }}</a></li>
+						<li>{{ message("Poslovni korisnici") }}</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		<h4 class="headline with-border margin-top-0 margin-bottom-35">{{ message("Poslovni Korisnici") }}</h4>
+		<blockquote>{{ message("Svim našim poslovnim korisnicima nudimo poseban paket usluga.") }}</blockquote>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+
+			<h4 class="headline with-border margin-top-45 margin-bottom-25">{{ message("Zašto baš Safe Drive?") }}</h4>
+
+			<p>{{ message("Odlazak na poslovno putovanje od sada može biti zadovoljstvo.") }}</p>
+
+			<p>{{ message("Posjedujete vozilo i iz bilo kojeg razloga niste u mogućnosti njime upravljati, ili jednostavno želite osobnog vozača? Mi imamo rješenje za Vas.") }}</p>
+
+			<p>{{ message("Iznajmite svog vozača kada Vam je potreban, bez obaveze njegova zapošljavanja. Vozač za vrijeme trajanja poslovnog putovanja brine o Vašoj sigurnosti u prometu.") }}</p>
+
+			<p>{{ message("Organizirate proslavu za djelatnike i želite da im druženje s Vama ostane još dugo u lijepom sjećanju?") }}</p>
+
+			<p>{{ message("Organizirate proslavu ili domjenak za poslovne partnere?") }}</p>
+
+			<p>{{ message("Ostavite dobar dojam i neka Vam sigurnost svih uzvanika bude na prvome mjestu.") }}</p>
+
+			<p>{{ message("Omogućite gostima nezaboravne trenutke opuštanja na proslavi i osigurajte im siguran povratak najmilijima. Safe Drive tim profesionalnih vozača će sve Vaše uzvanike sigurno odvesti njihovim kućama.") }}</p>
+
+			<p>{{ message("...i još puno, puno toga...") }}</p>
+
+			<p>{{ message("Prilagođavamo se Vašim potrebama. Obratite nam se sa povjerenjem.") }}</p>
+
+		</div>
+	</div>
+
+
+</div>
+
+<div class="container margin-top-35">
+
+	<div class="row">
+
+		<!-- Contact Details -->
+		<div class="col-md-4">
+			<!-- Contact Details -->
+			<div class="sidebar-textbox">
+
+				<ul class="contact-details">
+					<li><i class="im im-icon-Phone-2"></i> <strong>{{ message("Telefon:") }}</strong> <span>{{ message("01 / 2069 287") }} </span></li>
+					<li><i class="im im-icon-Envelope"></i> <strong>{{ message("E-Mail:") }}</strong> <span><a href="#">{{ message("info@safedrive.hr") }}</a></span></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="col-md-8">
+			{% if flash.type is not empty %}
+				
+				<div class="notification {{ flash.type }} closeable">
+					<p>{{ flash.message }}</p>
+					<a class="close"></a>
+				</div>
+				
+			{% endif %}
+			<section id="contact">
+				<h4 class="headline margin-bottom-35">{{ message("Kontakt") }}</h4>
+
+				<div id="contact-message"></div> 
+
+					<form method="POST" action="{{ 'contact' | base_url }}" name="premium_contact" id="contactform" autocomplete="on">
+
+						<input type="hidden" name="premium_contact" value="" />
+						<div class="row">
+							<div class="col-md-12">
+								<div>
+									<input name="name" type="text" id="name" placeholder="{{ message("Vaše cijenjeno ime") }}" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div>
+									<input name="surname" type="text" id="surname" placeholder="{{ message("Naziv tvrtke") }}" />
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div>
+									<input name="email" type="text" id="email" placeholder="{{ message("Email adresa") }}" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div>
+									<input name="subject" type="text" id="subject" placeholder="{{ message("Naslov") }}" />
+								</div>
+							</div>
+						</div>
+						<div>
+							<textarea name="comments" cols="40" rows="3" id="comments" placeholder="{{ message("Poruka...") }}" spellcheck="true"></textarea>
+						</div>
+
+						<input type="submit" class="submit button" id="submit" value="{{ message("Pošalji") }}" />
+
+					</form>
+			</section>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,627 @@
+msgid ""
+msgstr ""
+"Language: hr_HR.utf8\n"
+"Project-Id-Version: wc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+msgid "test"
+msgstr "test-a-a-a--a-a"
+
+msgid "Poslovni korisnici"
+msgstr "Poslovni korisnici-a-a-a--a-a"
+
+msgid "Home"
+msgstr "Home-a-a-a--a-a"
+
+msgid "Poslovni Korisnici"
+msgstr "Poslovni Korisnici-a-a-a--a-a"
+
+msgid "Svim našim poslovnim korisnicima nudimo poseban paket usluga."
+msgstr "Svim našim poslovnim korisnicima nudimo poseban paket usluga.-a-a-a--a-a"
+
+msgid "Zašto baš Safe Drive?"
+msgstr "Zašto baš Safe Drive?-a-a-a--a-a"
+
+msgid "Odlazak na poslovno putovanje od sada može biti zadovoljstvo."
+msgstr "Odlazak na poslovno putovanje od sada može biti zadovoljstvo.-a-a-a--a-a"
+
+msgid "Posjedujete vozilo i iz bilo kojeg razloga niste u mogućnosti njime upravljati, ili jednostavno želite osobnog vozača? Mi imamo rješenje za Vas."
+msgstr "Posjedujete vozilo i iz bilo kojeg razloga niste u mogućnosti njime upravljati, ili jednostavno želite osobnog vozača? Mi imamo rješenje za Vas.-a-a-a--a-a"
+
+msgid "Iznajmite svog vozača kada Vam je potreban, bez obaveze njegova zapošljavanja. Vozač za vrijeme trajanja poslovnog putovanja brine o Vašoj sigurnosti u prometu."
+msgstr "Iznajmite svog vozača kada Vam je potreban, bez obaveze njegova zapošljavanja. Vozač za vrijeme trajanja poslovnog putovanja brine o Vašoj sigurnosti u prometu.-a-a-a--a-a"
+
+msgid "Organizirate proslavu za djelatnike i želite da im druženje s Vama ostane još dugo u lijepom sjećanju?"
+msgstr "Organizirate proslavu za djelatnike i želite da im druženje s Vama ostane još dugo u lijepom sjećanju?-a-a-a--a-a"
+
+msgid "Organizirate proslavu ili domjenak za poslovne partnere?"
+msgstr "Organizirate proslavu ili domjenak za poslovne partnere?-a-a-a--a-a"
+
+msgid "Ostavite dobar dojam i neka Vam sigurnost svih uzvanika bude na prvome mjestu."
+msgstr "Ostavite dobar dojam i neka Vam sigurnost svih uzvanika bude na prvome mjestu.-a-a-a--a-a"
+
+msgid "Omogućite gostima nezaboravne trenutke opuštanja na proslavi i osigurajte im siguran povratak najmilijima. Safe Drive tim profesionalnih vozača će sve Vaše uzvanike sigurno odvesti njihovim kućama."
+msgstr "Omogućite gostima nezaboravne trenutke opuštanja na proslavi i osigurajte im siguran povratak najmilijima. Safe Drive tim profesionalnih vozača će sve Vaše uzvanike sigurno odvesti njihovim kućama.-a-a-a--a-a"
+
+msgid "...i još puno, puno toga..."
+msgstr "...i još puno, puno toga...-a-a-a--a-a"
+
+msgid "Prilagođavamo se Vašim potrebama. Obratite nam se sa povjerenjem."
+msgstr "Prilagođavamo se Vašim potrebama. Obratite nam se sa povjerenjem.-a-a-a--a-a"
+
+msgid "Telefon:"
+msgstr "Telefon:-a-a-a--a-a"
+
+msgid "01 / 2069 287"
+msgstr "01 / 2069 287-a-a-a--a-a"
+
+msgid "E-Mail:"
+msgstr "E-Mail:-a-a-a--a-a"
+
+msgid "info@safedrive.hr"
+msgstr "info@safedrive.hr-a-a-a--a-a"
+
+msgid "Kontakt"
+msgstr "Kontakt-a-a-a--a-a"
+
+msgid "Vaše cijenjeno ime"
+msgstr "Vaše cijenjeno ime-a-a-a--a-a"
+
+msgid "Naziv tvrtke"
+msgstr "Naziv tvrtke-a-a-a--a-a"
+
+msgid "Email adresa"
+msgstr "Email adresa-a-a-a--a-a"
+
+msgid "Naslov"
+msgstr "Naslov-a-a-a--a-a"
+
+msgid "Poruka..."
+msgstr "Poruka...-a-a-a--a-a"
+
+msgid "Pošalji"
+msgstr "Pošalji-a-a-a--a-a"
+
+msgid "Načini plaćanja"
+msgstr "Načini plaćanja-a-a-a--a-a"
+
+msgid "Cash, Maestro, Mastercard, Visa, V PAY, JCB, American Express"
+msgstr "Cash, Maestro, Mastercard, Visa, V PAY, JCB, American Express-a-a-a--a-a"
+
+msgid "Mapa stranice"
+msgstr "Mapa stranice-a-a-a--a-a"
+
+msgid "Email:"
+msgstr "Email:-a-a-a--a-a"
+
+msgid "01 / 2069287"
+msgstr "01 / 2069287-a-a-a--a-a"
+
+msgid "Safe Drive za usluge i trgovinu j.d.o.o. sa sjedištem u Svetom Ivanu Zelini. Društvo je upisano u registar trgovačkog suda u Zagrebu pod brojem Tt-17/43455-4, MBS: 081134105, OIB: 54950832962, IBAN: HR9023600001102651779 - Direktor: Marko Hasan"
+msgstr "Safe Drive za usluge i trgovinu j.d.o.o. sa sjedištem u Svetom Ivanu Zelini. Društvo je upisano u registar trgovačkog suda u Zagrebu pod brojem Tt-17/43455-4, MBS: 081134105, OIB: 54950832962, IBAN: HR9023600001102651779 - Direktor: Marko Hasan-a-a-a--a-a"
+
+msgid "U ime SafeDrive tima i u osobno ime svim građanima koji slave Božić čestitamo ovaj veliki kršćanski praznik. Neka temeljne ljudske vrijednosti ljubavi, opraštanja i razumijevanja, na koje Božić uvijek iznova podsjeća, budu putokaz kroz svakodnevni život  i glavna snaga u suočavanju sa svim izazovima. Želimo vam da u miru i slozi proslavite ovaj veliki praznik, okruženi svojim najmilijima."
+msgstr "U ime SafeDrive tima i u osobno ime svim građanima koji slave Božić čestitamo ovaj veliki kršćanski praznik. Neka temeljne ljudske vrijednosti ljubavi, opraštanja i razumijevanja, na koje Božić uvijek iznova podsjeća, budu putokaz kroz svakodnevni život  i glavna snaga u suočavanju sa svim izazovima. Želimo vam da u miru i slozi proslavite ovaj veliki praznik, okruženi svojim najmilijima.-a-a-a--a-a"
+
+msgid "I ne zaboravite, ako popijete koju više, na usluzi smo Vam ;)"
+msgstr "I ne zaboravite, ako popijete koju više, na usluzi smo Vam ;)-a-a-a--a-a"
+
+msgid "Zatvori"
+msgstr "Zatvori-a-a-a--a-a"
+
+msgid "Postani član!"
+msgstr "Postani član!-a-a-a--a-a"
+
+msgid "Registracija"
+msgstr "Registracija-a-a-a--a-a"
+
+msgid "Ime i prezime"
+msgstr "Ime i prezime-a-a-a--a-a"
+
+msgid "Kontakt broj:"
+msgstr "Kontakt broj:-a-a-a--a-a"
+
+msgid "Email adresa:"
+msgstr "Email adresa:-a-a-a--a-a"
+
+msgid "Postani član"
+msgstr "Postani član-a-a-a--a-a"
+
+msgid "Molimo Vas da unesete tražene podatke"
+msgstr "Molimo Vas da unesete tražene podatke-a-a-a--a-a"
+
+msgid "Molimo Vas da unesete sve tražene podatke. Po zaprimanju naruđbe kontaktirat će Vas dežurno osoblje našeg call centra"
+msgstr "Molimo Vas da unesete sve tražene podatke. Po zaprimanju naruđbe kontaktirat će Vas dežurno osoblje našeg call centra-a-a-a--a-a"
+
+msgid "Startna lokacija:"
+msgstr "Startna lokacija:-a-a-a--a-a"
+
+msgid "Vaše odredište:"
+msgstr "Vaše odredište:-a-a-a--a-a"
+
+msgid "Okvirna udaljenost:"
+msgstr "Okvirna udaljenost:-a-a-a--a-a"
+
+msgid "Okvirna cijena:"
+msgstr "Okvirna cijena:-a-a-a--a-a"
+
+msgid "NAPOMENA: Molimo Vas da na mapi provjerite dali su startna lokacija i odredišna lokacija zaista pravilno označene."
+msgstr "NAPOMENA: Molimo Vas da na mapi provjerite dali su startna lokacija i odredišna lokacija zaista pravilno označene.-a-a-a--a-a"
+
+msgid "Vaš kontakt (broj mobitela)"
+msgstr "Vaš kontakt (broj mobitela)-a-a-a--a-a"
+
+msgid "Marka vozila"
+msgstr "Marka vozila-a-a-a--a-a"
+
+msgid "Registracijske oznake"
+msgstr "Registracijske oznake-a-a-a--a-a"
+
+msgid "Broj članske iskaznice (za registrirane članove)"
+msgstr "Broj članske iskaznice (za registrirane članove)-a-a-a--a-a"
+
+msgid "Pošalji narudžbu"
+msgstr "Pošalji narudžbu-a-a-a--a-a"
+
+msgid "Odustani"
+msgstr "Odustani-a-a-a--a-a"
+
+msgid "Vaša trenutna lokacija..."
+msgstr "Vaša trenutna lokacija...-a-a-a--a-a"
+
+msgid "Željena destinacija..."
+msgstr "Željena destinacija...-a-a-a--a-a"
+
+msgid "Izračunaj"
+msgstr "Izračunaj-a-a-a--a-a"
+
+msgid "24 sata dnevno 7 dana u tjedu 365 dana u godini"
+msgstr "24 sata dnevno 7 dana u tjedu 365 dana u godini-a-a-a--a-a"
+
+msgid "Naručite svog vozača preko sms-a, viber i whatsapp mobilne aplikacije na broj 091 5820673"
+msgstr "Naručite svog vozača preko sms-a, viber i whatsapp mobilne aplikacije na broj 091 5820673-a-a-a--a-a"
+
+msgid "Radimo 24 sata bez prestanka"
+msgstr "Radimo 24 sata bez prestanka-a-a-a--a-a"
+
+msgid "Mišljenje korisnika"
+msgstr "Mišljenje korisnika-a-a-a--a-a"
+
+msgid "Vaše mišljenje nam je vrlo bitno. Prikupljamo iskustva, savjete, prijedloge i kritike naših korisnika kako bismo Vam i u budućnosti bili u mogućnosti pružiti što kvalitetniju uslugu."
+msgstr "Vaše mišljenje nam je vrlo bitno. Prikupljamo iskustva, savjete, prijedloge i kritike naših korisnika kako bismo Vam i u budućnosti bili u mogućnosti pružiti što kvalitetniju uslugu.-a-a-a--a-a"
+
+msgid "Našla sam se sa društvom na kavi, stvar se brzo otela kontroli i popili smo koju čašicu previše. Skoro cijeli dan na radiju pričaju kako policija provodi akciju alkotestiranja vozača. Jedan od prijatelja iz društva se sjetio pozvati Safe Drive tim da ga odveze kući. Na zahtjev svih nas vrlo brzo došla su još tri vozača i cijelo društvo se sigurno vratila svojim kućama"
+msgstr "Našla sam se sa društvom na kavi, stvar se brzo otela kontroli i popili smo koju čašicu previše. Skoro cijeli dan na radiju pričaju kako policija provodi akciju alkotestiranja vozača. Jedan od prijatelja iz društva se sjetio pozvati Safe Drive tim da ga odveze kući. Na zahtjev svih nas vrlo brzo došla su još tri vozača i cijelo društvo se sigurno vratila svojim kućama-a-a-a--a-a"
+
+msgid "Marina, 34"
+msgstr "Marina, 34-a-a-a--a-a"
+
+msgid "Velika Gorica"
+msgstr "Velika Gorica-a-a-a--a-a"
+
+msgid "Nisam imao pojma da ovako nešto kod nas postoji, slučajno sam vidio reklamu na internetu i prvom prilikom koristio njihovu uslugu. Vrlo ljubazan vozač vratio me kući u pripitom stanju. Učlanio sam se u njihov klub i uslugu ću sigurno koristiti ponovo."
+msgstr "Nisam imao pojma da ovako nešto kod nas postoji, slučajno sam vidio reklamu na internetu i prvom prilikom koristio njihovu uslugu. Vrlo ljubazan vozač vratio me kući u pripitom stanju. Učlanio sam se u njihov klub i uslugu ću sigurno koristiti ponovo.-a-a-a--a-a"
+
+msgid "Damir, 26"
+msgstr "Damir, 26-a-a-a--a-a"
+
+msgid "Zagreb, Dubrava"
+msgstr "Zagreb, Dubrava-a-a-a--a-a"
+
+msgid "Prezadovoljan sam obavljenom uslugom, svaka pohvala Safe Drive timu!"
+msgstr "Prezadovoljan sam obavljenom uslugom, svaka pohvala Safe Drive timu!-a-a-a--a-a"
+
+msgid "Matej, 23"
+msgstr "Matej, 23-a-a-a--a-a"
+
+msgid "Zagreb, Trešnjevka"
+msgstr "Zagreb, Trešnjevka-a-a-a--a-a"
+
+msgid "Događaji na kojima smo prisutni"
+msgstr "Događaji na kojima smo prisutni-a-a-a--a-a"
+
+msgid "Postanite naš poslovni partner i sami uredite svoj prostor na našoj stranici."
+msgstr "Postanite naš poslovni partner i sami uredite svoj prostor na našoj stranici.-a-a-a--a-a"
+
+msgid "Otvoreno!"
+msgstr "Otvoreno!-a-a-a--a-a"
+
+msgid "Hrana"
+msgstr "Hrana-a-a-a--a-a"
+
+msgid "Ime restorana"
+msgstr "Ime restorana-a-a-a--a-a"
+
+msgid "Adresa restorana"
+msgstr "Adresa restorana-a-a-a--a-a"
+
+msgid "Postanite poslovni korisnik Safe Drive usluge"
+msgstr "Postanite poslovni korisnik Safe Drive usluge-a-a-a--a-a"
+
+msgid "Pojednostavnite svoje poslovanje uz našu ponudu usluga za poslovne korisnike. Pošaljite upit i postanite poslovni korisnik Safe Drive usluge. Obratite nam se sa povjerenjem."
+msgstr "Pojednostavnite svoje poslovanje uz našu ponudu usluga za poslovne korisnike. Pošaljite upit i postanite poslovni korisnik Safe Drive usluge. Obratite nam se sa povjerenjem.-a-a-a--a-a"
+
+msgid "Pogledajte program za poslovne korisnike"
+msgstr "Pogledajte program za poslovne korisnike-a-a-a--a-a"
+
+msgid "Naša ponuda"
+msgstr "Naša ponuda-a-a-a--a-a"
+
+msgid "Premium usluga"
+msgstr "Premium usluga-a-a-a--a-a"
+
+msgid "Najam vozača za proslave."
+msgstr "Najam vozača za proslave.-a-a-a--a-a"
+
+msgid "Ostavite dobar dojam i pobrinite se za siguran povratak svih Vaših uzvanika njihovim kućama."
+msgstr "Ostavite dobar dojam i pobrinite se za siguran povratak svih Vaših uzvanika njihovim kućama.-a-a-a--a-a"
+
+msgid "Naruči!"
+msgstr "Naruči!-a-a-a--a-a"
+
+msgid "Osnovna usluga"
+msgstr "Osnovna usluga-a-a-a--a-a"
+
+msgid "Već od 90kn"
+msgstr "Već od 90kn-a-a-a--a-a"
+
+msgid "Najam vozača za udaljenosti od 10-25 km."
+msgstr "Najam vozača za udaljenosti od 10-25 km.-a-a-a--a-a"
+
+msgid "Brzi dolazak na Vašu lokaciju"
+msgstr "Brzi dolazak na Vašu lokaciju-a-a-a--a-a"
+
+msgid "Sigurna i udobna vožnja na lokaciju po Vašoj želji"
+msgstr "Sigurna i udobna vožnja na lokaciju po Vašoj želji-a-a-a--a-a"
+
+msgid "Ne riskirate!"
+msgstr "Ne riskirate!-a-a-a--a-a"
+
+msgid "Iskoristite sve pogodnosti Vašeg članstva u Safe Drive-u."
+msgstr "Iskoristite sve pogodnosti Vašeg članstva u Safe Drive-u.-a-a-a--a-a"
+
+msgid "Ova opcija Vam omogućava primjenu tjednih cjena preko vikenda."
+msgstr "Ova opcija Vam omogućava primjenu tjednih cjena preko vikenda.-a-a-a--a-a"
+
+msgid "Vaše cijenjeno prezime"
+msgstr "Vaše cijenjeno prezime-a-a-a--a-a"
+
+msgid "Vaša email adresa"
+msgstr "Vaša email adresa-a-a-a--a-a"
+
+msgid "Cjenik"
+msgstr "Cjenik-a-a-a--a-a"
+
+msgid "Safe Drive cjenik usluga - vikend (petak, subota, nedjelja)"
+msgstr "Safe Drive cjenik usluga - vikend (petak, subota, nedjelja)-a-a-a--a-a"
+
+msgid "Naziv usluge"
+msgstr "Naziv usluge-a-a-a--a-a"
+
+msgid "Cjena"
+msgstr "Cjena-a-a-a--a-a"
+
+msgid "Najam vozača - udaljenost do 10 km"
+msgstr "Najam vozača - udaljenost do 10 km-a-a-a--a-a"
+
+msgid "90kn"
+msgstr "90kn-a-a-a--a-a"
+
+msgid "Najam vozača - udaljenost od 10 do 15 km"
+msgstr "Najam vozača - udaljenost od 10 do 15 km-a-a-a--a-a"
+
+msgid "130kn"
+msgstr "130kn-a-a-a--a-a"
+
+msgid "Najam vozača - udaljenost od 15 do 20km"
+msgstr "Najam vozača - udaljenost od 15 do 20km-a-a-a--a-a"
+
+msgid "165kn"
+msgstr "165kn-a-a-a--a-a"
+
+msgid "Najam vozača - udaljenost od 20 do 25km"
+msgstr "Najam vozača - udaljenost od 20 do 25km-a-a-a--a-a"
+
+msgid "200kn"
+msgstr "200kn-a-a-a--a-a"
+
+msgid "Cijena najma po kilometru za udaljenosti preko 25km*"
+msgstr "Cijena najma po kilometru za udaljenosti preko 25km*-a-a-a--a-a"
+
+msgid "na upit"
+msgstr "na upit-a-a-a--a-a"
+
+msgid "Dnevni najam vozača*"
+msgstr "Dnevni najam vozača*-a-a-a--a-a"
+
+msgid "Najam vozača za proslave*"
+msgstr "Najam vozača za proslave*-a-a-a--a-a"
+
+msgid "Najam vozača za poslovna putovanja*"
+msgstr "Najam vozača za poslovna putovanja*-a-a-a--a-a"
+
+msgid "Tjedni cjenik ponedjeljak-četvrtak"
+msgstr "Tjedni cjenik ponedjeljak-četvrtak-a-a-a--a-a"
+
+msgid "82kn"
+msgstr "82kn-a-a-a--a-a"
+
+msgid "120kn"
+msgstr "120kn-a-a-a--a-a"
+
+msgid "Najam vozača - udaljenost od 15 do 20k"
+msgstr "Najam vozača - udaljenost od 15 do 20k-a-a-a--a-a"
+
+msgid "150kn"
+msgstr "150kn-a-a-a--a-a"
+
+msgid "180kn"
+msgstr "180kn-a-a-a--a-a"
+
+msgid "Dnevni najam vozača"
+msgstr "Dnevni najam vozača-a-a-a--a-a"
+
+msgid "Najam vozača za proslave"
+msgstr "Najam vozača za proslave-a-a-a--a-a"
+
+msgid "Najam vozača za poslovna putovanja"
+msgstr "Najam vozača za poslovna putovanja-a-a-a--a-a"
+
+msgid "*Mogućnost dogovora paušalne cijene za veće udaljenosti od 25 km"
+msgstr "*Mogućnost dogovora paušalne cijene za veće udaljenosti od 25 km-a-a-a--a-a"
+
+msgid "*Dnevno iznajmljivanje vozača za poslovna i privatna putovanja"
+msgstr "*Dnevno iznajmljivanje vozača za poslovna i privatna putovanja-a-a-a--a-a"
+
+msgid "*Prisutnost vozača na proslavi - cijena na upit, mogućnost dogovora paušalne cijena"
+msgstr "*Prisutnost vozača na proslavi - cijena na upit, mogućnost dogovora paušalne cijena-a-a-a--a-a"
+
+msgid "*Možete nas angažirati za sve vrste proslava - Doček nove godine, svadbe, krštenja, domjenci, rođendani itd…"
+msgstr "*Možete nas angažirati za sve vrste proslava - Doček nove godine, svadbe, krštenja, domjenci, rođendani itd…-a-a-a--a-a"
+
+msgid "Napomena: Članstvom u našem klubu ostvarujete popust na cijene usluga preko vikenda. Svim našim članovima osiguravamo tjedne cijene vikendom."
+msgstr "Napomena: Članstvom u našem klubu ostvarujete popust na cijene usluga preko vikenda. Svim našim članovima osiguravamo tjedne cijene vikendom.-a-a-a--a-a"
+
+msgid "Čekanje vozača do 10 min"
+msgstr "Čekanje vozača do 10 min-a-a-a--a-a"
+
+msgid "nema naplate"
+msgstr "nema naplate-a-a-a--a-a"
+
+msgid "Usluga čekanje dodatno započetih 10 min"
+msgstr "Usluga čekanje dodatno započetih 10 min-a-a-a--a-a"
+
+msgid "30kn"
+msgstr "30kn-a-a-a--a-a"
+
+msgid "Svaki započeti sat čekanj"
+msgstr "Svaki započeti sat čekanj-a-a-a--a-a"
+
+msgid "Ostale usluge*"
+msgstr "Ostale usluge*-a-a-a--a-a"
+
+msgid "po dogovoru"
+msgstr "po dogovoru-a-a-a--a-a"
+
+msgid "*Čekanje do 10 min se ne naplaćuje"
+msgstr "*Čekanje do 10 min se ne naplaćuje-a-a-a--a-a"
+
+msgid "*Pod ostale usluge smatramo usluge koje kreirate sami - više detalja na stranici"
+msgstr "*Pod ostale usluge smatramo usluge koje kreirate sami - više detalja na stranici-a-a-a--a-a"
+
+msgid "usluge"
+msgstr "usluge-a-a-a--a-a"
+
+msgid "Svakim našim angažmanom osiguravamo siguran povratak svih uzvanika njihovim kućama."
+msgstr "Svakim našim angažmanom osiguravamo siguran povratak svih uzvanika njihovim kućama.-a-a-a--a-a"
+
+msgid "Kreirano:"
+msgstr "Kreirano:-a-a-a--a-a"
+
+msgid "Napomena:"
+msgstr "Napomena:-a-a-a--a-a"
+
+msgid "Provjeriti dali osoba već posjeduje člansku iskaznicu!"
+msgstr "Provjeriti dali osoba već posjeduje člansku iskaznicu!-a-a-a--a-a"
+
+msgid "Zahtjev za članstvom"
+msgstr "Zahtjev za članstvom-a-a-a--a-a"
+
+msgid "Podaci:"
+msgstr "Podaci:-a-a-a--a-a"
+
+msgid "Ime i prezime:"
+msgstr "Ime i prezime:-a-a-a--a-a"
+
+msgid "Kontakt:"
+msgstr "Kontakt:-a-a-a--a-a"
+
+msgid "www.safedrive.hr"
+msgstr "www.safedrive.hr-a-a-a--a-a"
+
+msgid "01 / 206 92 87"
+msgstr "01 / 206 92 87-a-a-a--a-a"
+
+msgid "Naručeno:"
+msgstr "Naručeno:-a-a-a--a-a"
+
+msgid "Što prije reagirati!"
+msgstr "Što prije reagirati!-a-a-a--a-a"
+
+msgid "Nova narudžba"
+msgstr "Nova narudžba-a-a-a--a-a"
+
+msgid "Osobni podaci:"
+msgstr "Osobni podaci:-a-a-a--a-a"
+
+msgid "Broj članske iskaznice:"
+msgstr "Broj članske iskaznice:-a-a-a--a-a"
+
+msgid "Podaci o vozilu:"
+msgstr "Podaci o vozilu:-a-a-a--a-a"
+
+msgid "Marka vozila:"
+msgstr "Marka vozila:-a-a-a--a-a"
+
+msgid "Registracija:"
+msgstr "Registracija:-a-a-a--a-a"
+
+msgid "Podaci o vožnji:"
+msgstr "Podaci o vožnji:-a-a-a--a-a"
+
+msgid "Lokacija gdje se korisnik nalazi:"
+msgstr "Lokacija gdje se korisnik nalazi:-a-a-a--a-a"
+
+msgid "Lokacija gdje se korisnik vozi:"
+msgstr "Lokacija gdje se korisnik vozi:-a-a-a--a-a"
+
+msgid "Okvirno vrijeme:"
+msgstr "Okvirno vrijeme:-a-a-a--a-a"
+
+msgid "Poslano:"
+msgstr "Poslano:-a-a-a--a-a"
+
+msgid "Imati na umu što prije odgovoriti!"
+msgstr "Imati na umu što prije odgovoriti!-a-a-a--a-a"
+
+msgid "Nova poruka s kontakt formulara"
+msgstr "Nova poruka s kontakt formulara-a-a-a--a-a"
+
+msgid "Naslov:"
+msgstr "Naslov:-a-a-a--a-a"
+
+msgid "Poruka:"
+msgstr "Poruka:-a-a-a--a-a"
+
+msgid "404 Stranica nije pronađena"
+msgstr "404 Stranica nije pronađena-a-a-a--a-a"
+
+msgid "404"
+msgstr "404-a-a-a--a-a"
+
+msgid "Žao nam je :("
+msgstr "Žao nam je :(-a-a-a--a-a"
+
+msgid "Stranica koju ste tražili nije pronađena"
+msgstr "Stranica koju ste tražili nije pronađena-a-a-a--a-a"
+
+msgid "Unesite pojam koji tražite..."
+msgstr "Unesite pojam koji tražite...-a-a-a--a-a"
+
+msgid "Traži"
+msgstr "Traži-a-a-a--a-a"
+
+msgid "O nama"
+msgstr "O nama-a-a-a--a-a"
+
+msgid "Safe Drive konačno u Hrvatskoj!"
+msgstr "Safe Drive konačno u Hrvatskoj!-a-a-a--a-a"
+
+msgid "Za sada je usluga dostupna u Zagrebu i okolici, uskoro i u ostatku Hrvatske."
+msgstr "Za sada je usluga dostupna u Zagrebu i okolici, uskoro i u ostatku Hrvatske.-a-a-a--a-a"
+
+msgid "Zašto i kako je nastao Safe Drive"
+msgstr "Zašto i kako je nastao Safe Drive-a-a-a--a-a"
+
+msgid "Safe Drive ideja je nastala iz potrebe za većom sigurnosti svih sudionika u prometu. Naš tim ima za jasnu viziju omogućiti svim svojim korisnicima opuštanje u društvu najmilijih kada i gdje oni to žele."
+msgstr "Safe Drive ideja je nastala iz potrebe za većom sigurnosti svih sudionika u prometu. Naš tim ima za jasnu viziju omogućiti svim svojim korisnicima opuštanje u društvu najmilijih kada i gdje oni to žele.-a-a-a--a-a"
+
+msgid "Jedan od glavnih razloga zašto ljudi voze pod utjecajem alkohola je jer se ne žele vratiti kući bez svog automobila. Na taj način riskiraju plaćanje kazne za vožnju u alkoholiziranom stanju, prometnu nesreću sa materijalnom štetom ili ono najgore stradavanje u prometnoj nesreći."
+msgstr "Jedan od glavnih razloga zašto ljudi voze pod utjecajem alkohola je jer se ne žele vratiti kući bez svog automobila. Na taj način riskiraju plaćanje kazne za vožnju u alkoholiziranom stanju, prometnu nesreću sa materijalnom štetom ili ono najgore stradavanje u prometnoj nesreći.-a-a-a--a-a"
+
+msgid "Od sada ništa od spomenutog ne mora biti opcija, Safe Drive tim preuzima odgovornost za Vašu sigurnost u prometu i omogućava Vam potpuno bezbrižno opuštanje u svim situacijama."
+msgstr "Od sada ništa od spomenutog ne mora biti opcija, Safe Drive tim preuzima odgovornost za Vašu sigurnost u prometu i omogućava Vam potpuno bezbrižno opuštanje u svim situacijama.-a-a-a--a-a"
+
+msgid "Safe Drive usluga funkcionira na slijedeći način. Na Vaš zahtjev, na dogovorenu lokaciju i u dogovoreno vrijeme, upućuje se Safe Drive vozač. Po dolasku, vozač preuzima Vaše vozilo i prevozi Vas u udobnosti Vašeg limenog ljubimca na željenu lokaciju, pri tome brinući o Vašoj sigurnosti. Nakon izvršene usluge vozač odlazi i nastavlja brigu o sigurnosti drugih sudionika u prometu."
+msgstr "Safe Drive usluga funkcionira na slijedeći način. Na Vaš zahtjev, na dogovorenu lokaciju i u dogovoreno vrijeme, upućuje se Safe Drive vozač. Po dolasku, vozač preuzima Vaše vozilo i prevozi Vas u udobnosti Vašeg limenog ljubimca na željenu lokaciju, pri tome brinući o Vašoj sigurnosti. Nakon izvršene usluge vozač odlazi i nastavlja brigu o sigurnosti drugih sudionika u prometu.-a-a-a--a-a"
+
+msgid "No to nije sve, Safe Drive vozači su tu da Vam olakšaju svakodnevne obaveze i stoje Vam na raspolaganju kada je to Vama najpotrebnije. Uslugu koja Vam je potrebna osmišljate sami, a realizaciju prepustite nama."
+msgstr "No to nije sve, Safe Drive vozači su tu da Vam olakšaju svakodnevne obaveze i stoje Vam na raspolaganju kada je to Vama najpotrebnije. Uslugu koja Vam je potrebna osmišljate sami, a realizaciju prepustite nama.-a-a-a--a-a"
+
+msgid "Ako iz bilo kojeg razloga procijenite da niste u mogućnosti upravljati motornim vozilom, ne riskirajte i kontaktirajte nas sa povjerenjem, mi ćemo se pobrinuti za Vašu sigurnost. Za nas ništa nije nemoguće i svaki Vaš poziv nama je novi izazov. Svakom Vašem zadatku mi ćemo pristupiti krajnje profesionalno."
+msgstr "Ako iz bilo kojeg razloga procijenite da niste u mogućnosti upravljati motornim vozilom, ne riskirajte i kontaktirajte nas sa povjerenjem, mi ćemo se pobrinuti za Vašu sigurnost. Za nas ništa nije nemoguće i svaki Vaš poziv nama je novi izazov. Svakom Vašem zadatku mi ćemo pristupiti krajnje profesionalno.-a-a-a--a-a"
+
+msgid "Sve detalje o našoj ponudi možete saznati klikom na"
+msgstr "Sve detalje o našoj ponudi možete saznati klikom na-a-a-a--a-a"
+
+msgid "usluge."
+msgstr "usluge.-a-a-a--a-a"
+
+msgid "Za sve detalje stojimo Vam na raspolaganju."
+msgstr "Za sve detalje stojimo Vam na raspolaganju.-a-a-a--a-a"
+
+msgid "Pošaljite upit."
+msgstr "Pošaljite upit.-a-a-a--a-a"
+
+msgid "Vaša sigurnost je naša obaveza bez kompromisa."
+msgstr "Vaša sigurnost je naša obaveza bez kompromisa.-a-a-a--a-a"
+
+msgid "Usluge"
+msgstr "Usluge-a-a-a--a-a"
+
+msgid "Prateći potrebe naših korisnika i klijenata osmislili smo slijedeći paket usluga koji je osmišljen s ciljem povećanja sigurnosti svih sudionika u prometu"
+msgstr "Prateći potrebe naših korisnika i klijenata osmislili smo slijedeći paket usluga koji je osmišljen s ciljem povećanja sigurnosti svih sudionika u prometu-a-a-a--a-a"
+
+msgid "U prvome redu paket usluga je osmišljen sa ciljem povećanja sigurnosti svih sudionika u prometu."
+msgstr "U prvome redu paket usluga je osmišljen sa ciljem povećanja sigurnosti svih sudionika u prometu.-a-a-a--a-a"
+
+msgid "Neke od usluga koje pružamo su"
+msgstr "Neke od usluga koje pružamo su-a-a-a--a-a"
+
+msgid "Dolazimo po Vas na proslave i zajedno sa Vašim društvom vraćamo kući, vodeći brigu o sigurnosti Vas i vašeg limenog ljubimca. Možete iznajmiti potreban broj vozača za vašu proslavu koji će se pobrinuti da svi uzvanici sigurno stignu svojim kućama."
+msgstr "Dolazimo po Vas na proslave i zajedno sa Vašim društvom vraćamo kući, vodeći brigu o sigurnosti Vas i vašeg limenog ljubimca. Možete iznajmiti potreban broj vozača za vašu proslavu koji će se pobrinuti da svi uzvanici sigurno stignu svojim kućama.-a-a-a--a-a"
+
+msgid "Ako ste umorni i niste u mogućnosti nastaviti svoje putovanje, preuzimamo Vaše vozilo i vozimo Vas do željene destinacije. Prevozimo Vas sa jedne proslave na drugu. Vozimo Vašu djecu u vrtić ili školu Vašim vozilom i još puno, puno toga…"
+msgstr "Ako ste umorni i niste u mogućnosti nastaviti svoje putovanje, preuzimamo Vaše vozilo i vozimo Vas do željene destinacije. Prevozimo Vas sa jedne proslave na drugu. Vozimo Vašu djecu u vrtić ili školu Vašim vozilom i još puno, puno toga…-a-a-a--a-a"
+
+msgid "Za sve što niste u mogućnosti sami odraditi iz bilo kojeg razloga stojimo Vam na raspolaganju.	Sami kreirajte uslugu koja Vam je potrebna."
+msgstr "Za sve što niste u mogućnosti sami odraditi iz bilo kojeg razloga stojimo Vam na raspolaganju.	Sami kreirajte uslugu koja Vam je potrebna.-a-a-a--a-a"
+
+msgid "Pošaljite upit"
+msgstr "Pošaljite upit-a-a-a--a-a"
+
+msgid "Sve Vaše svakodnevne obaveze su za nas posao koji ćemo odraditi sa zadovoljstvom. Za nas ograničenja ne postoje."
+msgstr "Sve Vaše svakodnevne obaveze su za nas posao koji ćemo odraditi sa zadovoljstvom. Za nas ograničenja ne postoje.-a-a-a--a-a"
+
+msgid "Vaša sigurnost je naša obaveza. Za sve upite i nedoumice obratite se profesionalnom Safe Drive timu s povjerenjem."
+msgstr "Vaša sigurnost je naša obaveza. Za sve upite i nedoumice obratite se profesionalnom Safe Drive timu s povjerenjem.-a-a-a--a-a"
+
+msgid "Prednosti"
+msgstr "Prednosti-a-a-a--a-a"
+
+msgid "Safe Drive usluga prijevoza Vašeg vozila na servis u točno dogovoreno vrijeme i povratak vozila kući"
+msgstr "Safe Drive usluga prijevoza Vašeg vozila na servis u točno dogovoreno vrijeme i povratak vozila kući-a-a-a--a-a"
+
+msgid "Putujete u inozemstvo, mi vraćamo Vaše vozilo iz zračne luke na kućnu adresu, ili željenu lokaciju, zatim dostavljamo vozilo u zračnu luku u dogovoreno vrijeme po povratku sa putovanja. U tom slučaju ne morate brinuti za sigurnost svog limenog ljubimca"
+msgstr "Putujete u inozemstvo, mi vraćamo Vaše vozilo iz zračne luke na kućnu adresu, ili željenu lokaciju, zatim dostavljamo vozilo u zračnu luku u dogovoreno vrijeme po povratku sa putovanja. U tom slučaju ne morate brinuti za sigurnost svog limenog ljubimca-a-a-a--a-a"
+
+msgid "Dostavljamo Vam vozilo na željenu lokaciju"
+msgstr "Dostavljamo Vam vozilo na željenu lokaciju-a-a-a--a-a"
+
+msgid "Vozimo Vas na pregled kod liječnika ili Vas vraćamo kući nakon medicinske intervencije ako iz bilo kojeg razloga niste u mogućnosti upravljati vozilom"
+msgstr "Vozimo Vas na pregled kod liječnika ili Vas vraćamo kući nakon medicinske intervencije ako iz bilo kojeg razloga niste u mogućnosti upravljati vozilom-a-a-a--a-a"
+
+msgid "Vozimo Vaše vozilo na pranje u autopraonicu"
+msgstr "Vozimo Vaše vozilo na pranje u autopraonicu-a-a-a--a-a"
+
+msgid "Vozimo Vaše vozilo na tehnički pregled"
+msgstr "Vozimo Vaše vozilo na tehnički pregled-a-a-a--a-a"
+
+msgid "Vozimo Vas i Vašu obitelj na odmor"
+msgstr "Vozimo Vas i Vašu obitelj na odmor-a-a-a--a-a"
+
+msgid "Vraćamo Vas s najljepšeg adventa u Europi u sigurnosti Vašeg vozila"
+msgstr "Vraćamo Vas s najljepšeg adventa u Europi u sigurnosti Vašeg vozila-a-a-a--a-a"
+
+msgid "Napomena: Ne obavljamo taxi djelatnost i sve spomenute usluge obavljamo isključivo Vašim vozilom."
+msgstr "Napomena: Ne obavljamo taxi djelatnost i sve spomenute usluge obavljamo isključivo Vašim vozilom.-a-a-a--a-a"

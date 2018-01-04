@@ -1,0 +1,76 @@
+<section id="order-details" class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#f2f2f2">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3 class="headline centered">
+					{{ message("Molimo Vas da unesete tražene podatke") }}
+					<span class="margin-top-25">{{ message("Molimo Vas da unesete sve tražene podatke. Po zaprimanju naruđbe kontaktirat će Vas dežurno osoblje našeg call centra") }}</span>
+				</h3>
+			</div>
+		</div>
+
+		<div class="route-info">
+
+			<p>{{ message("Startna lokacija:") }} <span id="start-location"></span></p>
+			<p>{{ message("Vaše odredište:") }} <span id="finish-location"></span></p>
+			<p>{{ message("Okvirna udaljenost:") }} <span id="km-counter"></span></p>
+			<p>{{ message("Okvirna cijena:") }} <span id="price"></span></p>
+
+			<b>{{ message("NAPOMENA: Molimo Vas da na mapi provjerite dali su startna lokacija i odredišna lokacija zaista pravilno označene.") }}</b>
+
+		</div>
+
+		<div class="notification error closeable" id="order-response-status">
+			<p></p>
+			<a class="close"></a>
+		</div>
+
+		<form method="POST" id="order_details" action="{{ submit_order_url }}">
+
+			<input name="distance" type="hidden" id="distance" value="{{ distance }}" />
+			<input name="duration" type="hidden" id="duration" value="{{ duration }}" />
+			<input name="finish" type="hidden" id="finish" value="{{ finish }}" />
+			<input name="start" type="hidden" id="start" value="{{ start }}" />
+			<input name="price" type="hidden" id="price-f" value="{{ price }}" />
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<div>
+						<input name="nickname" type="text" id="nickname" placeholder="{{ message("Vaše cijenjeno ime") }}" />
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div>
+						<input name="kontakt" type="text" id="kontakt" placeholder="{{ message("Vaš kontakt (broj mobitela)") }}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div>
+						<input name="automobil" type="text" id="automobil" placeholder="{{ message("Marka vozila") }}" />
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div>
+						<input name="registracija" type="text" id="registracija" placeholder="{{ message("Registracijske oznake") }}" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div>
+						<input name="clanska-iskaznica" type="text" id="clanska-iskaznica" placeholder="{{ message("Broj članske iskaznice (za registrirane članove)") }}" />
+					</div>
+				</div>
+			</div>
+			<button class="button" type="submit">{{ message("Pošalji narudžbu") }}</button>
+			<button class="button border" id="cancel-order">{{ message("Odustani") }}</button>
+
+		</div>
+	</form>
+
+
+</section>

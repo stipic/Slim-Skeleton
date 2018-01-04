@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+	<title>{{title}} {% if meta.title is not empty %} - {{ meta.title }} {% endif %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="{{ meta.description }}">
+	<meta name="keywords" content="{{ meta.keywords }}">
+
+	<link rel="icon" type="image/png" href="{{ 'favicon.png' | images_root }}" />
+	<link rel="stylesheet" href="{{ 'style.css' | css_root }}">
+	<link rel="stylesheet" href="{{ 'colors/orange.css' | css_root }}" id="colors">
+	<base href="{{ '' | base_url }}">
+
+	<script type="text/javascript">
+		var base_url = "{{ '' | base_url }}";
+		var myLat = 45.80;
+		var myLong = 16;
+		var finishLat = null;
+		var finishLong = null;
+		var google_maps_key = "{{ '' | google_maps_key }}";
+	</script>
+
+	<!--
+
+	You're reading, We're hiring!
+
+	Contact us: software@safedrive.hr
+
+	███████╗ █████╗ ███████╗███████╗    ██████╗ ██████╗ ██╗██╗   ██╗███████╗
+	██╔════╝██╔══██╗██╔════╝██╔════╝    ██╔══██╗██╔══██╗██║██║   ██║██╔════╝
+	███████╗███████║█████╗  █████╗      ██║  ██║██████╔╝██║██║   ██║█████╗  
+	╚════██║██╔══██║██╔══╝  ██╔══╝      ██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝  
+	███████║██║  ██║██║     ███████╗    ██████╔╝██║  ██║██║ ╚████╔╝ ███████╗
+	╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
+
+	█▀▄▀█ ██   ██▄   ▄███▄       ▄█    ▄       ▄█▄    █▄▄▄▄ ████▄ ██     ▄▄▄▄▀ ▄█ ██   
+	█ █ █ █ █  █  █  █▀   ▀      ██     █      █▀ ▀▄  █  ▄▀ █   █ █ █ ▀▀▀ █    ██ █ █  
+	█ ▄ █ █▄▄█ █   █ ██▄▄        ██ ██   █     █   ▀  █▀▀▌  █   █ █▄▄█    █    ██ █▄▄█ 
+	█   █ █  █ █  █  █▄   ▄▀     ▐█ █ █  █     █▄  ▄▀ █  █  ▀████ █  █   █     ▐█ █  █ 
+	   █     █ ███▀  ▀███▀        ▐ █  █ █     ▀███▀    █            █  ▀       ▐    █ 
+	  ▀     █                       █   ██             ▀            █               █  
+	       ▀                                                       ▀               ▀   
+    -->             
+
+</head>
+<body>
+
+<div id="wrapper">
+
+{% if christmas == true %}
+	<canvas id="xmas" class="hidden-xs hidden-sm" style="position: absolute;"></canvas>
+
+	{% if cestitka == true %}
+		<div class="blagdanska-cestitka hidden-xs">
+			
+			<p>{{ message("U ime SafeDrive tima i u osobno ime svim građanima koji slave Božić čestitamo ovaj veliki kršćanski praznik. Neka temeljne ljudske vrijednosti ljubavi, opraštanja i razumijevanja, na koje Božić uvijek iznova podsjeća, budu putokaz kroz svakodnevni život  i glavna snaga u suočavanju sa svim izazovima. Želimo vam da u miru i slozi proslavite ovaj veliki praznik, okruženi svojim najmilijima.") }}</p>
+			<p>{{ message("I ne zaboravite, ako popijete koju više, na usluzi smo Vam ;)") }}</p>
+
+			<p>
+				<button class="button" id="close-cestitka">{{ message("Zatvori") }}</button>
+			</p>
+
+		</div>
+		<div class="cestitka-pozadina hidden-xs"></div>
+	{% endif %}
+
+{% endif %}
+
+<header id="header-container">
+
+	<div id="header">
+		<div class="container">
+			
+			<div class="left-side">
+				
+				<div id="logo">
+					<a href="{{ '' | base_url }}"><img src="{{ 'logo-big.png' | images_root }}" alt=""></a>
+				</div>
+
+				<div class="menu-responsive">
+					<i class="fa fa-reorder menu-trigger"></i>
+				</div>
+
+				<nav id="navigation" class="style-1">
+					<ul id="responsive">
+						{% for item in menu %}
+							<li><a class="{{ item.class }}" href="{{ item.path | base_url }}">{{ item.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				
+			</div>
+			<div class="right-side">
+				<div class="header-widget">
+					<a href="{{ 'premium' | base_url }}" class="sign-in"><i class="im im-icon-ID-Card"></i> {{ message("Poslovni korisnici") }}</a>
+					<a href="#sign-in-dialog" class="popup-with-zoom-anim button border with-icon">{{ message("Postani član!") }} <i class="sl sl-icon-plus"></i></a>
+				</div>
+			</div>
+			<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+				<div class="small-dialog-header">
+					<h3>{{ message("Registracija") }}</h3>
+				</div>
+				<div class="sign-in-form style-1">
+
+					<div class="notification error closeable" id="application-response-status">
+						<p></p>
+						<a class="close"></a>
+					</div>
+
+					<form method="POST" id="member_request" action="{{ '' | base_url }}">
+
+						<p class="form-row form-row-wide">
+							<label for="name_surname">{{ message("Ime i prezime") }}
+								<i class="im im-icon-Male"></i>
+								<input type="text" class="input-text" name="name_surname" id="name_surname" value="" />
+							</label>
+						</p>
+
+						<p class="form-row form-row-wide">
+							<label for="kontakt">{{ message("Kontakt broj:") }}
+								<i class="im im-icon-Lock-2"></i>
+								<input class="input-text" type="text" name="kontakt" id="kontakt"/>
+							</label>
+						</p>
+
+						<p class="form-row form-row-wide">
+							<label for="email">{{ message("Email adresa:") }}
+								<i class="im im-icon-At-Sign"></i>
+								<input class="input-text" type="text" name="email" id="email"/>
+							</label>
+						</p>
+
+						<div class="form-row">
+							<button type="button" id="become-member" class="button border margin-top-5">{{ message("Postani član") }}</button>
+						</div>
+						
+					</form>
+
+						
+				</div>
+			</div>
+
+		</div>
+	</div>
+</header>
+
+{% if christmas == true %}
+	<ul class="lightrope hidden-xs hidden-sm">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+{% endif %}
+
+{% if video_present == true %}
+	
+	<div class="featured-video">
+
+		<div class="close-video">ZATVORI X</div>
+		<iframe id="youtube-video" src="https://www.youtube.com/embed/5h4QSOoUc6o?autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+	</div>
+
+{% endif %}
+<div class="clearfix"></div>

@@ -36,6 +36,7 @@ define('APP_VIEW_CACHE_DIRECTORY', 'Cache');
 define('ADMIN_VIEW_CACHE_DIRECTORY', 'Cache');
 define('SYSTEM_DIR', 'Libraries');
 define('STORAGE_DIRECTORY', 'Public');
+define('LANG_DIRECTORY', 'Languages');
 
 define('ADMIN_ROOT_MODULE', 'dashboard');
 
@@ -54,9 +55,13 @@ define('IMAGES_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . IMAGES_
 define('SCRIPTS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . SCRIPTS_DIRECTORY);
 define('PLUGINS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . PLUGINS_DIRECTORY);
 define('LESS_ROOT', STORAGE_DIRECTORY . '/' . ASSETS_DIRECTORY . '/' . LESS_DIRECTORY);
+define('LANG_ROOT', __DIR__ . DIRECTORY_SEPARATOR . LANG_DIRECTORY);
 
 require __DIR__.DIRECTORY_SEPARATOR.'config.php';
 require __DIR__.DIRECTORY_SEPARATOR.COMPOSER_DIRECTORY.DIRECTORY_SEPARATOR.'autoload.php';
+
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
 $whoami = gethostname();
 foreach($config['env_hostnames'] as $env => $computers) {
@@ -106,7 +111,8 @@ $config['acp_base'] = $base_config.'/'.$config['acp_path'].'/'; // ne mora uvije
 
 putenv('LC_ALL=' . $config['languages'][$config['current_lang']]['locale']);
 setlocale(LC_ALL, $config['languages'][$config['current_lang']]['locale']);
-bindtextdomain($config['text_domain'], "./locale");
+bindtextdomain($config['text_domain'], LANG_ROOT);
+bind_textdomain_codeset($config['text_domain'], 'UTF-8'); 
 textdomain($config['text_domain']);
 
 $read_mode = APP_DIRECTORY; // 0 = App Dir! 1 = Admin Dir!
@@ -117,9 +123,6 @@ if(isset($segments[$ACP_key_to_read]) && $segments[$ACP_key_to_read] == $config[
 }
 
 $app = new \Slim\App(["settings" => $config]);
-
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
 
 require __DIR__.DIRECTORY_SEPARATOR.'dependencies.php';
 
@@ -225,8 +228,7 @@ foreach($controllers as $controller)
 
 $app->run();
 
-// AFTER ALL TRACK LOG
-if($config['db_trace_activity_log'] == TRUE)
+if($config['activity_log'] == TRUE)
 {
 	$container = $app->getContainer();
 	$db = $container->get('db_mysqli');
@@ -236,7 +238,8 @@ if($config['db_trace_activity_log'] == TRUE)
 	$data = array(
 		"activity_group_id" => $activity_group_id,
 		"timestamp" => time(),
-		"log" => $session_trace 
+		"log" => $session_trace,
+		"category" => "mysql"
 	);
 	$db->insert("activity_log", $data);
 

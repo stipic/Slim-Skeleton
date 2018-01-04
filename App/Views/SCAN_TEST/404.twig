@@ -1,0 +1,39 @@
+<div id="titlebar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>{{ message("404 Stranica nije pronađena") }}</h2>
+				<nav id="breadcrumbs">
+					<ul>
+						<li><a href="{{ '' | base_url }}">{{ message("Home") }}</a></li>
+						<li>{{ message("404") }}</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<section id="not-found" class="center">
+				<h2>{{ message("404") }} <i class="fa fa-question-circle"></i></h2>
+				<p>{{ message("Žao nam je :(") }}</p><br />
+				<p>{{ message("Stranica koju ste tražili nije pronađena") }}</p>
+
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="main-search-input gray-style margin-top-50 margin-bottom-10">
+							<div class="main-search-input-item">
+								<input type="text" placeholder="{{ message("Unesite pojam koji tražite...") }}" value=""/>
+							</div>
+
+							<button class="button">{{ message("Traži") }}</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

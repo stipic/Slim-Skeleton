@@ -3,13 +3,13 @@ defined('APP') OR exit('No direct script access allowed');
 
 $config['displayErrorDetails'] = TRUE;
 $config['addContentLengthHeader'] = FALSE;
-$config['db_trace_activity_log'] = TRUE;
+$config['activity_log'] = TRUE;
 $config['determineRouteBeforeAppMiddleware'] = TRUE;
 $config['text_domain'] = 'wc';
 
 $config['languages'] = array(
 	'hr' => array(
-		'locale' => 'hr_HR',
+		'locale' => 'hr_HR.utf8',
 		'date_format' => '',
 		'time_format' => '',
 		'timezone' => '',

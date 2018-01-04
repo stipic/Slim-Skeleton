@@ -1,0 +1,626 @@
+msgid ""
+msgstr ""
+"Language: rs_RS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+msgid "test"
+msgstr ""
+
+msgid "Poslovni korisnici"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Poslovni Korisnici"
+msgstr ""
+
+msgid "Svim našim poslovnim korisnicima nudimo poseban paket usluga."
+msgstr ""
+
+msgid "Zašto baš Safe Drive?"
+msgstr ""
+
+msgid "Odlazak na poslovno putovanje od sada može biti zadovoljstvo."
+msgstr ""
+
+msgid "Posjedujete vozilo i iz bilo kojeg razloga niste u mogućnosti njime upravljati, ili jednostavno želite osobnog vozača? Mi imamo rješenje za Vas."
+msgstr ""
+
+msgid "Iznajmite svog vozača kada Vam je potreban, bez obaveze njegova zapošljavanja. Vozač za vrijeme trajanja poslovnog putovanja brine o Vašoj sigurnosti u prometu."
+msgstr ""
+
+msgid "Organizirate proslavu za djelatnike i želite da im druženje s Vama ostane još dugo u lijepom sjećanju?"
+msgstr ""
+
+msgid "Organizirate proslavu ili domjenak za poslovne partnere?"
+msgstr ""
+
+msgid "Ostavite dobar dojam i neka Vam sigurnost svih uzvanika bude na prvome mjestu."
+msgstr ""
+
+msgid "Omogućite gostima nezaboravne trenutke opuštanja na proslavi i osigurajte im siguran povratak najmilijima. Safe Drive tim profesionalnih vozača će sve Vaše uzvanike sigurno odvesti njihovim kućama."
+msgstr ""
+
+msgid "...i još puno, puno toga..."
+msgstr ""
+
+msgid "Prilagođavamo se Vašim potrebama. Obratite nam se sa povjerenjem."
+msgstr ""
+
+msgid "Telefon:"
+msgstr ""
+
+msgid "01 / 2069 287"
+msgstr ""
+
+msgid "E-Mail:"
+msgstr ""
+
+msgid "info@safedrive.hr"
+msgstr ""
+
+msgid "Kontakt"
+msgstr ""
+
+msgid "Vaše cijenjeno ime"
+msgstr ""
+
+msgid "Naziv tvrtke"
+msgstr ""
+
+msgid "Email adresa"
+msgstr ""
+
+msgid "Naslov"
+msgstr ""
+
+msgid "Poruka..."
+msgstr ""
+
+msgid "Pošalji"
+msgstr ""
+
+msgid "Načini plaćanja"
+msgstr ""
+
+msgid "Cash, Maestro, Mastercard, Visa, V PAY, JCB, American Express"
+msgstr ""
+
+msgid "Mapa stranice"
+msgstr ""
+
+msgid "Email:"
+msgstr ""
+
+msgid "01 / 2069287"
+msgstr ""
+
+msgid "Safe Drive za usluge i trgovinu j.d.o.o. sa sjedištem u Svetom Ivanu Zelini. Društvo je upisano u registar trgovačkog suda u Zagrebu pod brojem Tt-17/43455-4, MBS: 081134105, OIB: 54950832962, IBAN: HR9023600001102651779 - Direktor: Marko Hasan"
+msgstr ""
+
+msgid "U ime SafeDrive tima i u osobno ime svim građanima koji slave Božić čestitamo ovaj veliki kršćanski praznik. Neka temeljne ljudske vrijednosti ljubavi, opraštanja i razumijevanja, na koje Božić uvijek iznova podsjeća, budu putokaz kroz svakodnevni život  i glavna snaga u suočavanju sa svim izazovima. Želimo vam da u miru i slozi proslavite ovaj veliki praznik, okruženi svojim najmilijima."
+msgstr ""
+
+msgid "I ne zaboravite, ako popijete koju više, na usluzi smo Vam ;)"
+msgstr ""
+
+msgid "Zatvori"
+msgstr ""
+
+msgid "Postani član!"
+msgstr ""
+
+msgid "Registracija"
+msgstr ""
+
+msgid "Ime i prezime"
+msgstr ""
+
+msgid "Kontakt broj:"
+msgstr ""
+
+msgid "Email adresa:"
+msgstr ""
+
+msgid "Postani član"
+msgstr ""
+
+msgid "Molimo Vas da unesete tražene podatke"
+msgstr ""
+
+msgid "Molimo Vas da unesete sve tražene podatke. Po zaprimanju naruđbe kontaktirat će Vas dežurno osoblje našeg call centra"
+msgstr ""
+
+msgid "Startna lokacija:"
+msgstr ""
+
+msgid "Vaše odredište:"
+msgstr ""
+
+msgid "Okvirna udaljenost:"
+msgstr ""
+
+msgid "Okvirna cijena:"
+msgstr ""
+
+msgid "NAPOMENA: Molimo Vas da na mapi provjerite dali su startna lokacija i odredišna lokacija zaista pravilno označene."
+msgstr ""
+
+msgid "Vaš kontakt (broj mobitela)"
+msgstr ""
+
+msgid "Marka vozila"
+msgstr ""
+
+msgid "Registracijske oznake"
+msgstr ""
+
+msgid "Broj članske iskaznice (za registrirane članove)"
+msgstr ""
+
+msgid "Pošalji narudžbu"
+msgstr ""
+
+msgid "Odustani"
+msgstr ""
+
+msgid "Vaša trenutna lokacija..."
+msgstr ""
+
+msgid "Željena destinacija..."
+msgstr ""
+
+msgid "Izračunaj"
+msgstr ""
+
+msgid "24 sata dnevno 7 dana u tjedu 365 dana u godini"
+msgstr ""
+
+msgid "Naručite svog vozača preko sms-a, viber i whatsapp mobilne aplikacije na broj 091 5820673"
+msgstr ""
+
+msgid "Radimo 24 sata bez prestanka"
+msgstr ""
+
+msgid "Mišljenje korisnika"
+msgstr ""
+
+msgid "Vaše mišljenje nam je vrlo bitno. Prikupljamo iskustva, savjete, prijedloge i kritike naših korisnika kako bismo Vam i u budućnosti bili u mogućnosti pružiti što kvalitetniju uslugu."
+msgstr ""
+
+msgid "Našla sam se sa društvom na kavi, stvar se brzo otela kontroli i popili smo koju čašicu previše. Skoro cijeli dan na radiju pričaju kako policija provodi akciju alkotestiranja vozača. Jedan od prijatelja iz društva se sjetio pozvati Safe Drive tim da ga odveze kući. Na zahtjev svih nas vrlo brzo došla su još tri vozača i cijelo društvo se sigurno vratila svojim kućama"
+msgstr ""
+
+msgid "Marina, 34"
+msgstr ""
+
+msgid "Velika Gorica"
+msgstr ""
+
+msgid "Nisam imao pojma da ovako nešto kod nas postoji, slučajno sam vidio reklamu na internetu i prvom prilikom koristio njihovu uslugu. Vrlo ljubazan vozač vratio me kući u pripitom stanju. Učlanio sam se u njihov klub i uslugu ću sigurno koristiti ponovo."
+msgstr ""
+
+msgid "Damir, 26"
+msgstr ""
+
+msgid "Zagreb, Dubrava"
+msgstr ""
+
+msgid "Prezadovoljan sam obavljenom uslugom, svaka pohvala Safe Drive timu!"
+msgstr ""
+
+msgid "Matej, 23"
+msgstr ""
+
+msgid "Zagreb, Trešnjevka"
+msgstr ""
+
+msgid "Događaji na kojima smo prisutni"
+msgstr ""
+
+msgid "Postanite naš poslovni partner i sami uredite svoj prostor na našoj stranici."
+msgstr ""
+
+msgid "Otvoreno!"
+msgstr ""
+
+msgid "Hrana"
+msgstr ""
+
+msgid "Ime restorana"
+msgstr ""
+
+msgid "Adresa restorana"
+msgstr ""
+
+msgid "Postanite poslovni korisnik Safe Drive usluge"
+msgstr ""
+
+msgid "Pojednostavnite svoje poslovanje uz našu ponudu usluga za poslovne korisnike. Pošaljite upit i postanite poslovni korisnik Safe Drive usluge. Obratite nam se sa povjerenjem."
+msgstr ""
+
+msgid "Pogledajte program za poslovne korisnike"
+msgstr ""
+
+msgid "Naša ponuda"
+msgstr ""
+
+msgid "Premium usluga"
+msgstr ""
+
+msgid "Najam vozača za proslave."
+msgstr ""
+
+msgid "Ostavite dobar dojam i pobrinite se za siguran povratak svih Vaših uzvanika njihovim kućama."
+msgstr ""
+
+msgid "Naruči!"
+msgstr ""
+
+msgid "Osnovna usluga"
+msgstr ""
+
+msgid "Već od 90kn"
+msgstr ""
+
+msgid "Najam vozača za udaljenosti od 10-25 km."
+msgstr ""
+
+msgid "Brzi dolazak na Vašu lokaciju"
+msgstr ""
+
+msgid "Sigurna i udobna vožnja na lokaciju po Vašoj želji"
+msgstr ""
+
+msgid "Ne riskirate!"
+msgstr ""
+
+msgid "Iskoristite sve pogodnosti Vašeg članstva u Safe Drive-u."
+msgstr ""
+
+msgid "Ova opcija Vam omogućava primjenu tjednih cjena preko vikenda."
+msgstr ""
+
+msgid "Vaše cijenjeno prezime"
+msgstr ""
+
+msgid "Vaša email adresa"
+msgstr ""
+
+msgid "Cjenik"
+msgstr ""
+
+msgid "Safe Drive cjenik usluga - vikend (petak, subota, nedjelja)"
+msgstr ""
+
+msgid "Naziv usluge"
+msgstr ""
+
+msgid "Cjena"
+msgstr ""
+
+msgid "Najam vozača - udaljenost do 10 km"
+msgstr ""
+
+msgid "90kn"
+msgstr ""
+
+msgid "Najam vozača - udaljenost od 10 do 15 km"
+msgstr ""
+
+msgid "130kn"
+msgstr ""
+
+msgid "Najam vozača - udaljenost od 15 do 20km"
+msgstr ""
+
+msgid "165kn"
+msgstr ""
+
+msgid "Najam vozača - udaljenost od 20 do 25km"
+msgstr ""
+
+msgid "200kn"
+msgstr ""
+
+msgid "Cijena najma po kilometru za udaljenosti preko 25km*"
+msgstr ""
+
+msgid "na upit"
+msgstr ""
+
+msgid "Dnevni najam vozača*"
+msgstr ""
+
+msgid "Najam vozača za proslave*"
+msgstr ""
+
+msgid "Najam vozača za poslovna putovanja*"
+msgstr ""
+
+msgid "Tjedni cjenik ponedjeljak-četvrtak"
+msgstr ""
+
+msgid "82kn"
+msgstr ""
+
+msgid "120kn"
+msgstr ""
+
+msgid "Najam vozača - udaljenost od 15 do 20k"
+msgstr ""
+
+msgid "150kn"
+msgstr ""
+
+msgid "180kn"
+msgstr ""
+
+msgid "Dnevni najam vozača"
+msgstr ""
+
+msgid "Najam vozača za proslave"
+msgstr ""
+
+msgid "Najam vozača za poslovna putovanja"
+msgstr ""
+
+msgid "*Mogućnost dogovora paušalne cijene za veće udaljenosti od 25 km"
+msgstr ""
+
+msgid "*Dnevno iznajmljivanje vozača za poslovna i privatna putovanja"
+msgstr ""
+
+msgid "*Prisutnost vozača na proslavi - cijena na upit, mogućnost dogovora paušalne cijena"
+msgstr ""
+
+msgid "*Možete nas angažirati za sve vrste proslava - Doček nove godine, svadbe, krštenja, domjenci, rođendani itd…"
+msgstr ""
+
+msgid "Napomena: Članstvom u našem klubu ostvarujete popust na cijene usluga preko vikenda. Svim našim članovima osiguravamo tjedne cijene vikendom."
+msgstr ""
+
+msgid "Čekanje vozača do 10 min"
+msgstr ""
+
+msgid "nema naplate"
+msgstr ""
+
+msgid "Usluga čekanje dodatno započetih 10 min"
+msgstr ""
+
+msgid "30kn"
+msgstr ""
+
+msgid "Svaki započeti sat čekanj"
+msgstr ""
+
+msgid "Ostale usluge*"
+msgstr ""
+
+msgid "po dogovoru"
+msgstr ""
+
+msgid "*Čekanje do 10 min se ne naplaćuje"
+msgstr ""
+
+msgid "*Pod ostale usluge smatramo usluge koje kreirate sami - više detalja na stranici"
+msgstr ""
+
+msgid "usluge"
+msgstr ""
+
+msgid "Svakim našim angažmanom osiguravamo siguran povratak svih uzvanika njihovim kućama."
+msgstr ""
+
+msgid "Kreirano:"
+msgstr ""
+
+msgid "Napomena:"
+msgstr ""
+
+msgid "Provjeriti dali osoba već posjeduje člansku iskaznicu!"
+msgstr ""
+
+msgid "Zahtjev za članstvom"
+msgstr ""
+
+msgid "Podaci:"
+msgstr ""
+
+msgid "Ime i prezime:"
+msgstr ""
+
+msgid "Kontakt:"
+msgstr ""
+
+msgid "www.safedrive.hr"
+msgstr ""
+
+msgid "01 / 206 92 87"
+msgstr ""
+
+msgid "Naručeno:"
+msgstr ""
+
+msgid "Što prije reagirati!"
+msgstr ""
+
+msgid "Nova narudžba"
+msgstr ""
+
+msgid "Osobni podaci:"
+msgstr ""
+
+msgid "Broj članske iskaznice:"
+msgstr ""
+
+msgid "Podaci o vozilu:"
+msgstr ""
+
+msgid "Marka vozila:"
+msgstr ""
+
+msgid "Registracija:"
+msgstr ""
+
+msgid "Podaci o vožnji:"
+msgstr ""
+
+msgid "Lokacija gdje se korisnik nalazi:"
+msgstr ""
+
+msgid "Lokacija gdje se korisnik vozi:"
+msgstr ""
+
+msgid "Okvirno vrijeme:"
+msgstr ""
+
+msgid "Poslano:"
+msgstr ""
+
+msgid "Imati na umu što prije odgovoriti!"
+msgstr ""
+
+msgid "Nova poruka s kontakt formulara"
+msgstr ""
+
+msgid "Naslov:"
+msgstr ""
+
+msgid "Poruka:"
+msgstr ""
+
+msgid "404 Stranica nije pronađena"
+msgstr ""
+
+msgid "404"
+msgstr ""
+
+msgid "Žao nam je :("
+msgstr ""
+
+msgid "Stranica koju ste tražili nije pronađena"
+msgstr ""
+
+msgid "Unesite pojam koji tražite..."
+msgstr ""
+
+msgid "Traži"
+msgstr ""
+
+msgid "O nama"
+msgstr ""
+
+msgid "Safe Drive konačno u Hrvatskoj!"
+msgstr ""
+
+msgid "Za sada je usluga dostupna u Zagrebu i okolici, uskoro i u ostatku Hrvatske."
+msgstr ""
+
+msgid "Zašto i kako je nastao Safe Drive"
+msgstr ""
+
+msgid "Safe Drive ideja je nastala iz potrebe za većom sigurnosti svih sudionika u prometu. Naš tim ima za jasnu viziju omogućiti svim svojim korisnicima opuštanje u društvu najmilijih kada i gdje oni to žele."
+msgstr ""
+
+msgid "Jedan od glavnih razloga zašto ljudi voze pod utjecajem alkohola je jer se ne žele vratiti kući bez svog automobila. Na taj način riskiraju plaćanje kazne za vožnju u alkoholiziranom stanju, prometnu nesreću sa materijalnom štetom ili ono najgore stradavanje u prometnoj nesreći."
+msgstr ""
+
+msgid "Od sada ništa od spomenutog ne mora biti opcija, Safe Drive tim preuzima odgovornost za Vašu sigurnost u prometu i omogućava Vam potpuno bezbrižno opuštanje u svim situacijama."
+msgstr ""
+
+msgid "Safe Drive usluga funkcionira na slijedeći način. Na Vaš zahtjev, na dogovorenu lokaciju i u dogovoreno vrijeme, upućuje se Safe Drive vozač. Po dolasku, vozač preuzima Vaše vozilo i prevozi Vas u udobnosti Vašeg limenog ljubimca na željenu lokaciju, pri tome brinući o Vašoj sigurnosti. Nakon izvršene usluge vozač odlazi i nastavlja brigu o sigurnosti drugih sudionika u prometu."
+msgstr ""
+
+msgid "No to nije sve, Safe Drive vozači su tu da Vam olakšaju svakodnevne obaveze i stoje Vam na raspolaganju kada je to Vama najpotrebnije. Uslugu koja Vam je potrebna osmišljate sami, a realizaciju prepustite nama."
+msgstr ""
+
+msgid "Ako iz bilo kojeg razloga procijenite da niste u mogućnosti upravljati motornim vozilom, ne riskirajte i kontaktirajte nas sa povjerenjem, mi ćemo se pobrinuti za Vašu sigurnost. Za nas ništa nije nemoguće i svaki Vaš poziv nama je novi izazov. Svakom Vašem zadatku mi ćemo pristupiti krajnje profesionalno."
+msgstr ""
+
+msgid "Sve detalje o našoj ponudi možete saznati klikom na"
+msgstr ""
+
+msgid "usluge."
+msgstr ""
+
+msgid "Za sve detalje stojimo Vam na raspolaganju."
+msgstr ""
+
+msgid "Pošaljite upit."
+msgstr ""
+
+msgid "Vaša sigurnost je naša obaveza bez kompromisa."
+msgstr ""
+
+msgid "Usluge"
+msgstr ""
+
+msgid "Prateći potrebe naših korisnika i klijenata osmislili smo slijedeći paket usluga koji je osmišljen s ciljem povećanja sigurnosti svih sudionika u prometu"
+msgstr ""
+
+msgid "U prvome redu paket usluga je osmišljen sa ciljem povećanja sigurnosti svih sudionika u prometu."
+msgstr ""
+
+msgid "Neke od usluga koje pružamo su"
+msgstr ""
+
+msgid "Dolazimo po Vas na proslave i zajedno sa Vašim društvom vraćamo kući, vodeći brigu o sigurnosti Vas i vašeg limenog ljubimca. Možete iznajmiti potreban broj vozača za vašu proslavu koji će se pobrinuti da svi uzvanici sigurno stignu svojim kućama."
+msgstr ""
+
+msgid "Ako ste umorni i niste u mogućnosti nastaviti svoje putovanje, preuzimamo Vaše vozilo i vozimo Vas do željene destinacije. Prevozimo Vas sa jedne proslave na drugu. Vozimo Vašu djecu u vrtić ili školu Vašim vozilom i još puno, puno toga…"
+msgstr ""
+
+msgid "Za sve što niste u mogućnosti sami odraditi iz bilo kojeg razloga stojimo Vam na raspolaganju.	Sami kreirajte uslugu koja Vam je potrebna."
+msgstr ""
+
+msgid "Pošaljite upit"
+msgstr ""
+
+msgid "Sve Vaše svakodnevne obaveze su za nas posao koji ćemo odraditi sa zadovoljstvom. Za nas ograničenja ne postoje."
+msgstr ""
+
+msgid "Vaša sigurnost je naša obaveza. Za sve upite i nedoumice obratite se profesionalnom Safe Drive timu s povjerenjem."
+msgstr ""
+
+msgid "Prednosti"
+msgstr ""
+
+msgid "Safe Drive usluga prijevoza Vašeg vozila na servis u točno dogovoreno vrijeme i povratak vozila kući"
+msgstr ""
+
+msgid "Putujete u inozemstvo, mi vraćamo Vaše vozilo iz zračne luke na kućnu adresu, ili željenu lokaciju, zatim dostavljamo vozilo u zračnu luku u dogovoreno vrijeme po povratku sa putovanja. U tom slučaju ne morate brinuti za sigurnost svog limenog ljubimca"
+msgstr ""
+
+msgid "Dostavljamo Vam vozilo na željenu lokaciju"
+msgstr ""
+
+msgid "Vozimo Vas na pregled kod liječnika ili Vas vraćamo kući nakon medicinske intervencije ako iz bilo kojeg razloga niste u mogućnosti upravljati vozilom"
+msgstr ""
+
+msgid "Vozimo Vaše vozilo na pranje u autopraonicu"
+msgstr ""
+
+msgid "Vozimo Vaše vozilo na tehnički pregled"
+msgstr ""
+
+msgid "Vozimo Vas i Vašu obitelj na odmor"
+msgstr ""
+
+msgid "Vraćamo Vas s najljepšeg adventa u Europi u sigurnosti Vašeg vozila"
+msgstr ""
+
+msgid "Napomena: Ne obavljamo taxi djelatnost i sve spomenute usluge obavljamo isključivo Vašim vozilom."
+msgstr ""
