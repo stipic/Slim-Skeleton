@@ -5,7 +5,7 @@ $container = $app->getContainer();
 $container['db_mysqli'] = function($container) use($config, &$activity_group_id)
 {
 	$db_mysqli = new MysqliDb($container['settings']['db']);
-	if($config['activity_log'] == TRUE)
+	/*if($config['activity_log'] == TRUE)
 	{
 		$db_mysqli->setTrace(true);
 		$wc = $container->get('WebCore');
@@ -15,7 +15,7 @@ $container['db_mysqli'] = function($container) use($config, &$activity_group_id)
 			"ip" => $wc->getIP() 
 		);
 		$activity_group_id = $db_mysqli->insert("activity_group", $data);
-	}
+	}*/
 	return $db_mysqli;
 };
 
