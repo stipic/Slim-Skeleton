@@ -33,7 +33,6 @@ class LanguageController extends Controller
 
 	public function index(Request $request, Response $response, $args) 
 	{
-
 		$get = $request->getQueryParams();
 
 		$this->_twig->display('layout.twig', $this->_data);
@@ -53,6 +52,7 @@ class LanguageController extends Controller
 			
 			$file_content = file_get_contents($file);
 			$messageKeys = array_unique(array_merge($messageKeys, $this->get_string_between($file_content, 'message("', '")')));
+			//$messageKeys = array_unique(array_merge($messageKeys, $this->get_string_between($file_content, "message('", "')")));
 		}
 //echo '<pre>' .print_r($messageKeys, true) . '</pre>';
 
@@ -110,11 +110,11 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		exit;
 	}
 
-	public function get_string_between($string, $start, $end) 
+	protected function get_string_between($string, $start, $end) 
 	{
 		$last_end = 0;
 		$matches = array();
-		while (($ini = strpos($string, $start, $last_end)) !== false) 
+		while(($ini = strpos($string, $start, $last_end)) !== false) 
 		{
 			$ini += strlen($start);
 			$len = strpos($string,$end,$ini) - $ini;
@@ -125,26 +125,28 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 	}
 
 
-	public function phpmo_convert($input, $output = false) {
-		if ( !$output )
-			$output = str_replace( '.po', '.mo', $input );
+	protected function phpmo_convert($input, $output = false) 
+	{
+		if(!$output)
+			$output = str_replace('.po', '.mo', $input);
 
-		$hash = $this->phpmo_parse_po_file( $input );
-		if ( $hash === false ) {
+		$hash = $this->phpmo_parse_po_file($input);
+		if ($hash === false) {
 			return false;
 		} else {
-			$this->phpmo_write_mo_file( $hash, $output );
+			$this->phpmo_write_mo_file($hash, $output);
 			return true;
 		}
 	}
 
-	public function phpmo_clean_helper($x) {
-		if (is_array($x)) {
-			foreach ($x as $k => $v) {
+	protected function phpmo_clean_helper($x) 
+	{
+		if(is_array($x)) {
+			foreach($x as $k => $v) {
 				$x[$k] = $this->phpmo_clean_helper($v);
 			}
 		} else {
-			if ($x[0] == '"')
+			if($x[0] == '"')
 				$x = substr($x, 1, -1);
 			$x = str_replace("\"\n\"", '', $x);
 			$x = str_replace('$', '\\$', $x);
@@ -152,9 +154,10 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		return $x;
 	}
 
-	public function phpmo_parse_po_file($in) {
+	protected function phpmo_parse_po_file($in) 
+	{
 		$fh = fopen($in, 'r');
-		if ($fh === false) {
+		if($fh === false) {
 			return false;
 		}
 
@@ -209,7 +212,6 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 								$temp[$state][sizeof($temp[$state]) - 1] .= "\n" . $line;
 								break;
 							default :
-								// parse error
 								fclose($fh);
 								return FALSE;
 						}
@@ -237,7 +239,8 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		return $hash;
 	}
 
-	public function phpmo_write_mo_file($hash, $out) {
+	protected function phpmo_write_mo_file($hash, $out) 
+	{
 		ksort($hash, SORT_STRING);
 		$mo = '';
 		$offsets = array ();
@@ -259,11 +262,11 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		}
 
 		$key_start = 7 * 4 + sizeof($hash) * 4 * 4;
-		$value_start = $key_start +strlen($ids);
-		$key_offsets = array ();
-		$value_offsets = array ();
-		foreach ($offsets as $v) {
-			list ($o1, $l1, $o2, $l2) = $v;
+		$value_start = $key_start + strlen($ids);
+		$key_offsets = array();
+		$value_offsets = array();
+		foreach($offsets as $v) {
+			list($o1, $l1, $o2, $l2) = $v;
 			$key_offsets[] = $l1;
 			$key_offsets[] = $o1 + $key_start;
 			$value_offsets[] = $l2;
@@ -279,7 +282,7 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		0, 
 		$key_start 
 		);
-		foreach ($offsets as $offset)
+		foreach($offsets as $offset)
 			$mo .= pack('i', $offset);
 		$mo .= $ids;
 		$mo .= $strings;

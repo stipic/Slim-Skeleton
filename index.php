@@ -227,7 +227,7 @@ foreach($controllers as $controller)
 }
 
 $app->run();
-
+/*
 if($config['activity_log'] == TRUE)
 {
 	$container = $app->getContainer();
@@ -248,4 +248,4 @@ if($config['activity_log'] == TRUE)
 	);
 	$db->where('id', $activity_group_id);
 	$db->update("activity_group", $data);
-}
+}*/
