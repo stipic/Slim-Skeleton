@@ -45,6 +45,8 @@ class LanguageController extends Controller
 		$scaned = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($base_folder));
 		
 		$messageKeys = array();
+		$existedKeys = array();
+		$existedTrans = array();
 		foreach($scaned as $file)
 		{
 			if($file->isDir()) { 
@@ -52,13 +54,15 @@ class LanguageController extends Controller
 			}
 			
 			$file_content = file_get_contents($file);
-			$messageKeys = array_unique(array_merge($messageKeys, $this->get_string_between($file_content, 'message("', '")')));
+			$messageKeys = array_filter(array_unique(array_merge($messageKeys, $this->get_string_between($file_content, 'message("', '")'))));
 		}
-//echo '<pre>' .print_r($messageKeys, true) . '</pre>';
 
+		//echo '<pre>' .print_r($messageKeys, true) . '</pre>';
+		
 		// Sada idi po svakom jeziku i provjeri dali .po file postoji
 		// ukoliko ne postoji kreiraj ga prvi puta sa message keyevima, a za defaultni jezik
 		// će nađeni message keyevi ujedno biti i prijevod
+		
 		foreach($this->_config['languages'] as $langKey => $lang)
 		{
 			$poFile = LANG_DIRECTORY . DIRECTORY_SEPARATOR . $lang['locale'] . DIRECTORY_SEPARATOR . 'LC_MESSAGES' . DIRECTORY_SEPARATOR . $lang['locale'] . '.po';
@@ -104,10 +108,30 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 
 				$this->phpmo_convert($poFile, $moFile);
 			}
+			else
+			{
+				// Već postoji prijevod za ovaj jezik, učitaj .po file i išćitaj sve keyeve i prijevode
+				// i usporedi sa skeniranim message keyevima, one koji se podudaraju ostavi, a one koje ne
+				// spremi u array i dodaj bez prijevoda
+				
+
+				// napomena: bitno je isfiltrirati prazna polja jer .po fileovi na pocetku imaju prazni msgid i msgstr
+				$existedTranslation = file_get_contents($poFile);
+				$existedKeys = array_filter(array_unique(array_merge($existedKeys, $this->get_string_between($existedTranslation, 'msgid "', '"'))));
+				$existedTrans = array_filter(array_unique(array_merge($existedTrans, $this->get_string_between($existedTranslation, 'msgstr "', '"'))));
+
+				$keysThatExistedTranslationDontHave = array();
+				$keysThatExistsButNotInUseAnywhere = array();
+
+				$keysThatExistedTranslationDontHave[$langKey] = array_diff($messageKeys, $existedKeys);
+				$keysThatExistsButNotInUseAnywhere[$langKey] = array_diff($existedKeys, $messageKeys);
+			}
+			
+			echo '<pre>' .print_r($keysThatExistsButNotInUseAnywhere, true) . '</pre>';
 		}
 
 		//echo '<pre>' .print_r($messageKeys, true) . '</pre>';
-		exit;
+		
 	}
 
 	public function get_string_between($string, $start, $end) 
