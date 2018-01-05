@@ -37,6 +37,8 @@ define('ADMIN_VIEW_CACHE_DIRECTORY', 'Cache');
 define('SYSTEM_DIR', 'Libraries');
 define('STORAGE_DIRECTORY', 'Public');
 define('LANG_DIRECTORY', 'Languages');
+define('DB_DIRECTORY', 'DB');
+define('BACKUP_DIRECTORY', 'Backups');
 
 define('ADMIN_ROOT_MODULE', 'dashboard');
 
@@ -198,7 +200,7 @@ else
 	{
 		$container = $app->getContainer();
 		$wc = $container->get('WebCore');
-		$wc->TRY_access_admin($request, $response, $next);
+		//$wc->TRY_access_admin($request, $response, $next);
 
 		/*$admin_uri = explode('/', $uri);
 		print_r($admin_uri);exit;

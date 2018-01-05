@@ -38,11 +38,12 @@ class DashboardController extends Controller
 		// prvo idu one s starijim datumom prema novijim
 		// nakon toga updateaj tablicu s migracijama
 
+		$this->dbExport();
 		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_twig->display('layout.twig', $this->_data);
 	}
 
-	public function backupDB()
+	protected function dbExport()
 	{
 		// Pokrenuti mysql dump i spremiti ga u DB/Backups/xxxx
 		// ukoliko je gzip dostupan pretvori .sql u gzip
@@ -51,6 +52,12 @@ class DashboardController extends Controller
 		// da mora nesto obrisati ili da nema memorije
 		// također prije dumpa provjeriti sys_getloadavg() ukoliko je procesor zadnjih 5 minuta bio preko 20-30% NE dozvoli
 		// dump baze nego obavijesti korisnika da priceka trenutno.
+		// provjeriti jel ima pravo zapisa na exports folder
+		// nakon sto export bude gotov bilo bi dobro da server sam napravit commit odnosno push (znaci treba implementirati GIT)
+		
+		$filename = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . BACKUP_DIRECTORY . DIRECTORY_SEPARATOR .'export_' . date("d-m-Y") . '_' . time() . '.sql.gz';
+		$cmd = "mysqldump -u ".$this->_config['db']['username']." --password=".$this->_config['db']['password']." ".$this->_config['db']['db']." | gzip --best > ".$filename;   
+		passthru($cmd);
 	}
 
 	public function users(Request $request, Response $response, $args) 
