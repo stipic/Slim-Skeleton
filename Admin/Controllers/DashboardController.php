@@ -54,10 +54,29 @@ class DashboardController extends Controller
 		// dump baze nego obavijesti korisnika da priceka trenutno.
 		// provjeriti jel ima pravo zapisa na exports folder
 		// nakon sto export bude gotov bilo bi dobro da server sam napravit commit odnosno push (znaci treba implementirati GIT)
-		
-		$filename = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . BACKUP_DIRECTORY . DIRECTORY_SEPARATOR .'export_' . date("d-m-Y") . '_' . time() . '.sql.gz';
-		$cmd = "mysqldump -u ".$this->_config['db']['username']." --password=".$this->_config['db']['password']." ".$this->_config['db']['db']." | gzip --best > ".$filename;   
-		passthru($cmd);
+		$directory = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . BACKUP_DIRECTORY . DIRECTORY_SEPARATOR;
+		$filename =  $directory .'export_' . date("d-m-Y") . '_' . time() . '.sql.gz';
+		$kilobytes = round(disk_free_space($directory)/1024);
+	
+		$dumpSize = $this->_db->rawQuery("
+			SELECT 
+				table_schema AS 'Database', 
+				SUM(data_length + index_length) / 1024 AS 'Size' 
+			FROM 
+				information_schema.TABLES GROUP BY table_schema");
+
+		$assocIndex = array_search($this->_config['db']['db'], array_column($dumpSize, 'Database'));
+		$db_size_kb = round($dumpSize[$assocIndex]['Size']);
+		$dif = $kilobytes - $db_size_kb;
+		$perc = (1 - $kilobytes / $dif) * 100;
+
+		echo $perc;
+		exit;
+		if(count(array_intersect(['mod_deflate', 'mod_gzip'],  apache_get_modules())) > 0) 
+		{
+			$cmd = "mysqldump -u ".$this->_config['db']['username']." --password=".$this->_config['db']['password']." ".$this->_config['db']['db']." | gzip --best > ".$filename;   
+			passthru($cmd);
+		}
 	}
 
 	public function users(Request $request, Response $response, $args) 
