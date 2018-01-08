@@ -34,6 +34,13 @@ $config['url_lang_flags'] = TRUE; // or FALSE for cookie storage
 $config['current_lang'] = 'hr'; // default hr
 $config['default_language_use_flag'] = FALSE; // defualtni jezik nece imati language flagove u URLu
 
+$config['git'] = array(
+	'repo' => '',
+	'branch' => '',
+	'username' => '',
+	'password' => ''
+);
+
 $config['project_name'] = 'WebCore';
 $config['base_url'] = 'https://safe-drive.org';
 $config['sub_dir'] = FALSE;

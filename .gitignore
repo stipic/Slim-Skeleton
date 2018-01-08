@@ -1,2 +1,4 @@
 Plugins/
+DB/Backups/*.gz
+DB/Backups/*.sql
 README.md
