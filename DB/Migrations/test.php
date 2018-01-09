@@ -7,6 +7,15 @@ $migration = array(
 	'exec_time' => '19:15'
 );
 
-$checkSql = 'SELECT * FROM users';
+$checkSql = 'SHOW TABLES LIKE "articles"';
 
-$execMigrationSql = ' ';
+$execMigrationSql = 
+'CREATE TABLE `articles` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`title` varchar(250) DEFAULT NULL,
+	`content` mediumtext DEFAULT NULL,
+	`slug` varchar(250) DEFAULT NULL,
+	`author` int(11) DEFAULT NULL,
+	`created` int(50) DEFAULT 0,
+  PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;';
