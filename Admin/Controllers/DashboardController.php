@@ -17,12 +17,15 @@ class DashboardController extends Controller
 
 	protected $_data = array();
 
+	protected $_auth;
+
 	public function __construct($c) 
 	{
 		$this->_container = $c;
 		$this->_db = $c->get('db_mysqli');
 		$this->_twig = $c->get('Twig');
 		$this->_config = $c->get('settings');
+		$this->_auth = $c->get('Auth');
 
 		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_data['base_url'] = $this->_config['base_url'];
@@ -38,17 +41,14 @@ class DashboardController extends Controller
 		// prvo idu one s starijim datumom prema novijim
 		// nakon toga updateaj tablicu s migracijama
 		
-		if($this->_has_migrations_for_execute())
-		{
-			
-		}
+		$this->_execute_migrations();
 
 		//$this->dbExport();
 		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_twig->display('layout.twig', $this->_data);
 	}
 
-	protected function _has_migrations_for_execute()
+	protected function _execute_migrations()
 	{
 		$base_folder = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . MIGRATION_DIRECTORY;
 		$scaned = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($base_folder));
@@ -58,14 +58,61 @@ class DashboardController extends Controller
 			if($file['extension'] === 'php')
 			{
 				$basename = $file['basename'];
+				$url = $file['dirname'] . DIRECTORY_SEPARATOR . $file['basename'];
 
 				$this->_db->where("filename", $basename);
 				$migration = $this->_db->getOne("wc_migrations");
 				if(count($migration) == 0)
 				{
-					// ok migracija nije izvršena, sada ucitaj migraciju 
-					// i provjeri dali je autoexec == true, ukoliko je
-					// izvrši migraciju i nakon toga je spremi u bazu
+					include($url);
+					if(isset($migration))
+					{
+						if($migration['autoexec'] === true)
+						{
+							$date = $migration['exec_date'];
+							$time = $migration['exec_time'];
+
+							$dt = \DateTime::createFromFormat("d.m.Y H:i", $date . ' ' . $time);
+							$ts = $dt->getTimestamp();
+							if(time() >= $ts && !empty($checkSql) && !empty($execMigrationSql))
+							{
+								$this->_db->startTransaction();
+
+								// Ok, zadovoljeno, pokreni test sql!
+								$test = $this->_db->rawQuery($checkSql);
+
+								if(count($test) == 0) 
+								{
+									// ok e sada kada test nije prošo, pokreni SQL migracije
+									$mg = $this->_db->rawQuery($execMigrationSql);
+									if($mg) 
+									{
+										$this->_db->commit();
+									}
+									else
+									{
+										$this->_db->rollback();
+									}
+								}
+
+								$migrationData = array(
+									'filename' => $basename,
+									'author_id' => $this->_auth->getUserId(),
+									'executed' => time()
+								);
+
+								$finishedMg = $this->_db->insert("wc_migrations", $migrationData);
+								if($finishedMg && $test) 
+								{
+									$this->_db->commit();
+								}
+								else
+								{
+									$this->_db->rollback();
+								}
+							}
+						}
+					}
 				}
 			}
 		}

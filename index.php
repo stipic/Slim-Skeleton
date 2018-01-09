@@ -201,7 +201,7 @@ else
 	{
 		$container = $app->getContainer();
 		$wc = $container->get('WebCore');
-		//$wc->TRY_access_admin($request, $response, $next);
+		$wc->TRY_access_admin($request, $response, $next);
 
 		/*$admin_uri = explode('/', $uri);
 		print_r($admin_uri);exit;
