@@ -37,10 +37,38 @@ class DashboardController extends Controller
 		// ukoliko ima, pronađi koje i kreni redom
 		// prvo idu one s starijim datumom prema novijim
 		// nakon toga updateaj tablicu s migracijama
+		
+		if($this->_has_migrations_for_execute())
+		{
+			
+		}
 
 		//$this->dbExport();
 		$this->_data['page_template'] = 'dashboard.twig';
 		$this->_twig->display('layout.twig', $this->_data);
+	}
+
+	protected function _has_migrations_for_execute()
+	{
+		$base_folder = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . MIGRATION_DIRECTORY;
+		$scaned = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($base_folder));
+		foreach($scaned as $file)
+		{
+			$file = pathinfo($file);
+			if($file['extension'] === 'php')
+			{
+				$basename = $file['basename'];
+
+				$this->_db->where("filename", $basename);
+				$migration = $this->_db->getOne("wc_migrations");
+				if(count($migration) == 0)
+				{
+					// ok migracija nije izvršena, sada ucitaj migraciju 
+					// i provjeri dali je autoexec == true, ukoliko je
+					// izvrši migraciju i nakon toga je spremi u bazu
+				}
+			}
+		}
 	}
 
 	protected function dbExport()
@@ -54,6 +82,7 @@ class DashboardController extends Controller
 		// dump baze nego obavijesti korisnika da priceka trenutno.
 		// provjeriti jel ima pravo zapisa na exports folder
 		// nakon sto export bude gotov bilo bi dobro da server sam napravit commit odnosno push (znaci treba implementirati GIT)
+		
 		$directory = APP . DIRECTORY_SEPARATOR . DB_DIRECTORY . DIRECTORY_SEPARATOR . BACKUP_DIRECTORY . DIRECTORY_SEPARATOR;
 		$filename =  $directory .'export_' . date("d-m-Y") . '_' . time() . '.sql.gz';
 		$kilobytes = disk_free_space($directory)/1024/1024;
@@ -189,7 +218,6 @@ class DashboardController extends Controller
 
 	public function users(Request $request, Response $response, $args) 
 	{
-
 		$get = $request->getQueryParams();
 
 		$this->_data['page_template'] = 'dashboard.twig';

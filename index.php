@@ -39,6 +39,7 @@ define('STORAGE_DIRECTORY', 'Public');
 define('LANG_DIRECTORY', 'Languages');
 define('DB_DIRECTORY', 'DB');
 define('BACKUP_DIRECTORY', 'Backups');
+define('MIGRATION_DIRECTORY', 'Migrations');
 
 define('ADMIN_ROOT_MODULE', 'dashboard');
 
