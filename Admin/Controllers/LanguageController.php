@@ -36,6 +36,80 @@ class LanguageController extends Controller
 		$get = $request->getQueryParams();
 
 		$this->_twig->display('layout.twig', $this->_data);
+
+		// ukoliko postoji POST data koji uvjetuje spremanje tj. update nekog jezika
+		// triggeriraj metodu za update
+		// $this->_update_translation($lang, $messageArr);
+	}
+
+	private function _update_translation($lang, $messageArr)
+	{
+		// lang = jezik koji se updatea
+		// messageArr = keyevi i prijevodi za svaki key
+		// regeneriraj .po i .mo fileove na temelju ovog messageArr za ovaj jezik
+	}
+
+	private function _upload_file($file, $typeOfApplication) 
+	{
+		$path_parts = pathinfo($file['name']);
+		$file_name = $path_parts['filename'];
+		$ext = '.'.$path_parts['extension'];
+
+		$destination_dir = ROOTPATH.DIRECTORY_SEPARATOR.'datastore'.DIRECTORY_SEPARATOR.'prijave'.DIRECTORY_SEPARATOR.$typeOfApplication.DIRECTORY_SEPARATOR.date("Y").DIRECTORY_SEPARATOR.date('m');
+		if(!file_exists($destination_dir)) 
+		{
+			if(!@mkdir($destination_dir, 0777, true)) 
+			{
+				VuduError::sendEmailAntiFlood(array(
+					'subject' => 'Unable to create form application destination directory.',
+					'body' => '',
+					'file' => __FILE__,
+					'line' => __LINE__
+				));
+
+				return false;
+			}
+			else
+			{
+				// dali postoji htaccess file
+				if(!file_exists(ROOTPATH.DIRECTORY_SEPARATOR.'datastore'.DIRECTORY_SEPARATOR.'prijave'.DIRECTORY_SEPARATOR.'.htaccess')) 
+				{
+					// pokusaj kreirati .htaccess file u folder 'prijave' i on ce vrijediti za sve subfoldere
+					$htaccess = @fopen(ROOTPATH.DIRECTORY_SEPARATOR.'datastore'.DIRECTORY_SEPARATOR.'prijave'.DIRECTORY_SEPARATOR.'.htaccess', "a+");
+					if($htaccess) 
+					{
+						// zabrani listanje i direktan pristup
+						fwrite($htaccess, "order deny,allow\n\rdeny from all");
+						fclose($htaccess);
+					}
+					else 
+					{
+						VuduError::sendEmailAntiFlood(array(
+							'subject' => 'Unable to create form application .htaccess file.',
+							'body' => '',
+							'file' => __FILE__,
+							'line' => __LINE__
+						));
+						return false;
+					}
+				}
+			}
+		}
+
+		$new_filename = VuduHelper::friendlyName(time().'_'.rand(1, 10).'_'.$file_name).$ext;
+		$destination_dir = $destination_dir.DIRECTORY_SEPARATOR.$new_filename;
+		if(!move_uploaded_file($file['tmp_name'], $destination_dir)) {
+			VuduError::sendEmailAntiFlood(array(
+				'subject' => 'Unable to save uploaded document on job application form.',
+				'body' => '',
+				'file' => __FILE__,
+				'line' => __LINE__
+			));
+			return false;
+		}
+
+		$path = str_replace(ROOTPATH.'/', '', $destination_dir);
+		return $path;
 	}
 
 	public function scan(Request $request, Response $response, $args) 
@@ -65,8 +139,22 @@ class LanguageController extends Controller
 		
 		foreach($this->_config['languages'] as $langKey => $lang)
 		{
-			$poFile = LANG_DIRECTORY . DIRECTORY_SEPARATOR . $lang['locale'] . DIRECTORY_SEPARATOR . 'LC_MESSAGES' . DIRECTORY_SEPARATOR . $lang['locale'] . '.po';
-			$moFile = LANG_DIRECTORY . DIRECTORY_SEPARATOR . $lang['locale'] . DIRECTORY_SEPARATOR . 'LC_MESSAGES' . DIRECTORY_SEPARATOR . $lang['locale'] . '.mo';
+			$localeDir = LANG_DIRECTORY . DIRECTORY_SEPARATOR . $lang['locale'];
+			$lc_dir = $localeDir . DIRECTORY_SEPARATOR . 'LC_MESSAGES';
+
+			if(!@mkdir($localeDir, 0777, true)) 
+			{
+				// logaj sranje
+			}
+
+			if(!@mkdir($localeDir, 0777, true)) 
+			{
+				// logaj sranje
+			}
+
+			$poFile = $lc_dir . DIRECTORY_SEPARATOR . $lang['locale'] . '.po';
+			$moFile = $lc_dir . DIRECTORY_SEPARATOR . $lang['locale'] . '.mo';
+
 			if(!file_exists($poFile))
 			{
 				$po = fopen($poFile, "w");
@@ -131,7 +219,6 @@ msgstr '.($this->_config['current_lang'] == $langKey ? $translation : '""').'
 		}
 
 		//echo '<pre>' .print_r($messageKeys, true) . '</pre>';
-		
 	}
 
 	protected function get_string_between($string, $start, $end) 

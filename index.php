@@ -109,7 +109,6 @@ if($server_url !== $base_config) {
 	exit; die();
 }
 
-
 $config['acp_base'] = $base_config.'/'.$config['acp_path'].'/'; // ne mora uvijek biti tocno, ali se koristi samo za Twig Filter pa nije toliko hitno testirati
 
 putenv('LC_ALL=' . $config['languages'][$config['current_lang']]['locale']);
@@ -230,6 +229,7 @@ foreach($controllers as $controller)
 }
 
 $app->run();
+
 /*
 if($config['activity_log'] == TRUE)
 {
